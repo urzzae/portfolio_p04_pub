@@ -1,0 +1,666 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            if (!window.gsap) d.classList.remove("js");
+          }, 2000);
+        });
+      })();
+    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디자인210</title>
+    <link rel="stylesheet" type="text/css" href="/css/webfont.css" />
+    <!-- CSS injected by webpack -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- JS injected by webpack -->
+  </head>
+  <body>
+    <a href="#page" class="skip_nav">본문 바로가기</a>
+    <div class="wrapper" style="overflow-x: hidden">
+      <!-- header -->
+      <header id="header">
+        <div id="header_wrap">
+          <div class="header_container">
+            <div class="header_inner">
+              <h1 class="logo">
+                <a href="./index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1016.34 185.38"
+                  >
+                    <path
+                      d="M64.85 0h48.35v139.55H18.11L0 122.59v-62.1l18.11-16.96h32.08l14.66 11.69V0Zm0 59.58h-16.5v63.93h16.5V59.58ZM147.83 43.54h73.56l16.96 16.04v29.56l-16.96 16.04H173.5v18.33h61.41v16.04h-87.08l-22.69-21.54V65.08l22.69-21.54Zm25.67 16.04v29.56H190V59.58h-16.5ZM352.71 43.54v16.04h-52.25v23.83h53.85v34.6l-22.68 21.54h-81.35v-16.04h53.85V99.45h-53.85V65.08l22.69-21.54h79.75ZM416.44 31.85h-50.18V4.59h50.18v27.27Zm0 107.7h-50.18V43.54h50.18v96.01ZM430.67 168.42v-17.87h50.18v18.79h12.38v-29.79h-46.75l-18.1-16.96v-62.1l18.1-16.96h32.08l12.83 10.31 12.83-10.31h37.35v120.3l-22.68 21.54h-70.12l-18.1-16.96Zm46.06-44.91h16.5V59.58h-16.5v63.93ZM618.36 139.55V59.58h-16.5v79.97h-48.35V43.54h37.35l12.83 10.31 12.83-10.31h32.08l18.11 16.96v79.06h-48.35ZM827.53 0h50.18v113.89h-50.18V0Zm0 123.51h50.18v16.04h-50.18v-16.04ZM1016.34 21.54v96.47l-22.68 21.54h-74.7l-22.69-21.54V21.54L918.96 0h74.7l22.68 21.54Zm-50.18-5.5h-19.71v107.47h19.71V16.04ZM748.47 40.56V16.04h16.73v52.48h-50.18l-16.96 16.04v29.33h50.18v-29.1h50.18l16.96-16.04V21.54L792.69 0h-76.31l-18.1 16.96v23.6h50.18Zm-50.41 82.95v16.04h117.33v-16.04H698.06Z"
+                    />
+                  </svg>
+                </a>
+              </h1>
+              <nav class="menu menu_pc">
+                <ul class="menu_list menu_pc_list">
+                  <li class="menu_item menu_pc_item">
+                    <a href="./about.html">
+                      <span>디자인210</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./service.html">
+                      <span>사업분야</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./project.html" class="current">
+                      <span>프로젝트</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./contact.html">
+                      <span>문의하기</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile -->
+              <nav class="menu menu_mobile">
+                <div class="hamburger_toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="menu_mobile_collapes">
+                  <ul class="menu_list menu_mobile_list">
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./about.html">
+                        <span>디자인210</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./service.html">
+                        <span>사업분야</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./project.html">
+                        <span>프로젝트</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./contact.html">
+                        <span>문의하기</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- 외부링크 -->
+              <div class="link link_pc">
+                <ul class="link_list link_pc_list">
+                  <li class="link_item link_pc_item">
+                    <!-- 210쇼핑몰로 이동 -->
+                    <a href="http://www.design210.com/cloud" target="_blank">
+                      <i class="ic_shop black"></i>
+                      <span>210SHOP</span>
+                    </a>
+                  </li>
+                  <li class="link_item link_pc_item">
+                    <!-- 210블로그로 이동 -->
+                    <a href="https://blog.naver.com/design_210" target="_blank">
+                      <i class="ic_news black"></i>
+                      <span>210NEWS</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- page project -->
+      <div id="page" class="project_info">
+        <!-- article -->
+        <div class="article">
+          <!-- article_header -->
+          <div class="article_header">
+            <div class="wrap">
+              <div class="breadcrumb" data-gsap="fade-down">
+                <h3 class="fs-txt-0">전용서체</h3>
+              </div>
+              <div class="article_header_inner">
+                <h2
+                  class="fs-title-2"
+                  data-gsap="fade-up"
+                  data-gsap-delay="300"
+                >
+                  전용서체는 브랜드의&nbsp;<strong class="bold"
+                    >고유한 목소리</strong
+                  ><img
+                    class="emoji"
+                    src="/images/intro_project.png"
+                    alt=""
+                    data-gsap="zoom-in"
+                    data-gsap-delay="350"
+                    data-gsap-ease="ease-out-back"
+                  />를 만듭니다.
+                  <i class="emoji hand-heart"></i>
+                </h2>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="rolling_text"></div>
+          </div>
+          <!-- //article_header -->
+          <!-- article_body -->
+          <div class="article_body">
+            <!-- 키워드 영역 -->
+            <section class="section project_info_keyword">
+              <div
+                class="section_title"
+                data-gsap="fade-up"
+                data-gsap-delay="500"
+              >
+                <div class="wrap col">
+                  <h2 class="fs-title-1s bold">5keyword</h2>
+                </div>
+              </div>
+              <div class="wrap" data-gsap="fade-up" data-gsap-delay="500">
+                <div class="keyword keyword_1" data-gsap="fade-up">
+                  <div class="keyword_content">
+                    <h3>
+                      <strong class="fs-txt-5 boldEx">Creative</strong>
+                      <span class="fs-txt-2 bold">독창적인 폰트</span>
+                    </h3>
+                    <p class="sub">
+                      브랜드의 가치와 색깔을 담은 폰트는&nbsp;<br />
+                      브랜드 아이덴티티를 선명하게 각인시키고&nbsp;<br />
+                      보는 재미와 즐거움까지 함께 선사합니다.
+                    </p>
+                  </div>
+                  <div class="keyword_icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 500 500"
+                      height="300"
+                    >
+                      <g style="isolation: isolate">
+                        <ellipse
+                          class="shape shape_01"
+                          cx="250"
+                          cy="101.16"
+                          rx="250"
+                          ry="101.16"
+                          style="fill: #e36bae; mix-blend-mode: multiply"
+                        />
+                        <ellipse
+                          class="shape shape_03"
+                          cx="250"
+                          cy="398.84"
+                          rx="250"
+                          ry="101.16"
+                          style="fill: #df5934"
+                        />
+                        <ellipse
+                          class="shape shape_02"
+                          cx="250"
+                          cy="250"
+                          rx="250"
+                          ry="101.16"
+                          style="mix-blend-mode: multiply; fill: #ffd836"
+                        />
+                        <text
+                          class="shape"
+                          transform="translate(250 409.43)"
+                          text-anchor="middle"
+                        >
+                          <tspan x="0" y="0">Creative</tspan>
+                        </text>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div class="keyword_wrap keyword_wrap_col">
+                  <div class="keyword keyword_2" data-gsap="fade-up">
+                    <div class="keyword_content">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Attractive</strong>
+                        <span class="fs-txt-2 bold">매력적인 폰트</span>
+                      </h3>
+                      <p class="sub">
+                        브랜드가 추구하는 이미지를&nbsp;<br />
+                        위트있고 통통튀는 디자인으로 재해석하여&nbsp;<br />
+                        사랑할 수 밖에 없는 취향저격 폰트를 만듭니다.
+                      </p>
+                    </div>
+                    <div class="keyword_icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 358.85 500"
+                        height="300"
+                      >
+                        <g style="isolation: isolate">
+                          <g style="mix-blend-mode: multiply">
+                            <path
+                              class="shape shape_01"
+                              d="M179.43 0 42.06 167.7h274.73L179.43 0z"
+                              style="fill: #e36bae; mix-blend-mode: multiply"
+                            />
+                          </g>
+                          <path
+                            class="shape shape_02"
+                            d="M345.81 279.68c21.24-25.44 16.18-49.7-12.63-63.69 10.12-31.06-3.81-51.7-36.11-53.96-2.26-32.3-22.9-46.23-53.96-36.11-13.99-28.8-38.25-33.87-63.69-12.63-25.44-21.24-49.7-16.18-63.69 12.63-31.06-10.12-51.7 3.81-53.96 36.11-32.3 2.26-46.23 22.9-36.11 53.96-28.8 13.99-33.87 38.25-12.63 63.69-21.24 25.44-16.18 49.7 12.63 63.69-10.12 31.06 3.81 51.7 36.11 53.96 2.26 32.3 22.9 46.23 53.96 36.11 13.99 28.8 38.25 33.87 63.69 12.63 25.44 21.24 49.7 16.18 63.69-12.63 31.06 10.12 51.7-3.81 53.96-36.11 32.3-2.26 46.23-22.9 36.11-53.96 28.8-13.99 33.87-38.25 12.63-63.69Z"
+                            style="mix-blend-mode: multiply; fill: #ffd836"
+                          />
+                          <path
+                            class="shape shape_03"
+                            d="M57.63 418.22h243.59V500H57.63z"
+                            style="fill: #df5934"
+                          />
+                          <text
+                            class="shape"
+                            transform="translate(179.43 297.28)"
+                            text-anchor="middle"
+                          >
+                            <tspan x="0" y="0">Attractive</tspan>
+                          </text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="keyword keyword_3" data-gsap="fade-up">
+                    <div class="keyword_content">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Emotional</strong>
+                        <span class="fs-txt-2 bold">감성적인 폰트</span>
+                      </h3>
+                      <p class="sub">
+                        전달하고자 하는 메세지를 있는 그대로,&nbsp;<br />
+                        감성을 담아 표현한 폰트는&nbsp;<br />
+                        최적의 브랜딩 효과를 만들어 냅니다.
+                      </p>
+                    </div>
+                    <div class="keyword_icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 500 500"
+                        height="300"
+                      >
+                        <g style="isolation: isolate">
+                          <path
+                            class="shape shape_01"
+                            d="M302.98 364.73c0-25.42-2.81-49.19-7.68-69.51 20.3 4.86 44.05 7.67 69.44 7.67 74.71 0 135.27-24.21 135.27-54.07s-60.56-54.07-135.27-54.07c-25.15 0-48.69 2.75-68.86 7.53 4.51-19.76 7.11-42.62 7.11-67.01C302.98 60.56 278.77 0 248.91 0s-54.07 60.56-54.07 135.27c0 24.17 2.55 46.84 6.99 66.48-19.65-4.45-42.35-7-66.55-7C60.56 194.74 0 218.95 0 248.81c0 29.86 60.56 54.07 135.27 54.07 24.44 0 47.34-2.6 67.13-7.14-4.8 20.2-7.56 43.78-7.56 68.98 0 74.71 24.21 135.27 54.07 135.27s54.07-60.56 54.07-135.27Z"
+                            style="fill: #df5934"
+                          />
+                          <path
+                            class="shape shape_02"
+                            d="M370.79 293.48C353 275.69 334.42 261 316.77 250.12c17.16-10.78 35.16-25.11 52.41-42.36 52.83-52.83 78.53-112.77 57.42-133.88-21.12-21.12-81.06 4.59-133.88 57.42-17.09 17.09-31.32 34.92-42.07 51.95-10.75-17.04-24.99-34.9-42.11-52.01C155.71 78.41 95.77 52.71 74.66 73.82c-21.12 21.12 4.59 81.06 57.42 133.88 17.28 17.28 35.32 31.63 52.51 42.42-17.68 10.89-36.3 25.61-54.12 43.43-52.83 52.83-78.53 112.77-57.42 133.88 21.12 21.12 81.06-4.59 133.88-57.42 17.98-17.98 32.8-36.77 43.72-54.58 10.91 17.79 25.73 36.57 43.68 54.52 52.83 52.83 112.77 78.53 133.88 57.42 21.12-21.12-4.59-81.06-57.42-133.88Z"
+                            style="fill: #ffd836; mix-blend-mode: multiply"
+                          />
+                          <text
+                            class="shape"
+                            transform="translate(250 260.59)"
+                            text-anchor="middle"
+                          >
+                            <tspan x="0" y="0">Emotional</tspan>
+                          </text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="keyword_wrap keyword_wrap_row">
+                  <div class="keyword keyword_4" data-gsap="fade-up">
+                    <div class="keyword_content">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Cultural</strong>
+                        <span class="fs-txt-2 bold">문화적인 폰트</span>
+                      </h3>
+                      <p class="sub">
+                        한 시대를 표현하고, 대표하는 폰트로&nbsp;<br />
+                        브랜드를 지속적으로 기억할 수 있게 합니다.
+                      </p>
+                    </div>
+                    <div class="keyword_icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 457.25 500"
+                        height="300"
+                      >
+                        <g style="isolation: isolate">
+                          <circle
+                            class="shape shape_01"
+                            cx="226.84"
+                            cy="297.77"
+                            r="202.23"
+                            style="fill: #df5934"
+                            transform="rotate(-45 226.844 297.778)"
+                          />
+                          <path
+                            class="shape shape_02"
+                            d="M354.65 87.43h102.6V500h-102.6z"
+                            style="fill: #e36bae; mix-blend-mode: multiply"
+                          />
+                          <path
+                            class="shape shape_03"
+                            d="M205.33 0c31.63 56.7 11.32 128.31-45.38 159.94C103.24 191.58 31.63 171.26 0 114.56L205.33 0Z"
+                            style="fill: #ffd836"
+                          />
+                          <text
+                            class="shape"
+                            transform="translate(228.63 308.37)"
+                            text-anchor="middle"
+                          >
+                            <tspan x="0" y="0">Cultural</tspan>
+                          </text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="keyword keyword_5" data-gsap="fade-up">
+                    <div class="keyword_content">
+                      <h3>
+                        <strong class="fs-txt-5 bold">Scientific</strong>
+                        <span class="fs-txt-2 bold">과학적인 폰트</span>
+                      </h3>
+                      <p class="sub">
+                        디자인210만의 과학적인 설계로 제작된 폰트는&nbsp;<br />
+                        신뢰감을 주며, 정확한 전달을 돕습니다.
+                      </p>
+                    </div>
+                    <div class="keyword_icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 442.62 500"
+                        height="300"
+                      >
+                        <g style="isolation: isolate">
+                          <path
+                            class="shape shape_01"
+                            d="M137.23 0c0 46.44 37.64 84.08 84.08 84.08S305.39 46.44 305.39 0H137.23Z"
+                            style="fill: #e36bae; mix-blend-mode: multiply"
+                          />
+                          <path
+                            class="shape shape_02"
+                            d="M0 57.38h442.62V500H0z"
+                            style="mix-blend-mode: multiply; fill: #ffd836"
+                          />
+                          <ellipse
+                            class="shape shape_03"
+                            cx="221.31"
+                            cy="278.69"
+                            rx="196.02"
+                            ry="94.84"
+                            style="fill: #df5934"
+                          />
+                          <text
+                            class="shape"
+                            transform="translate(221.31 289.29)"
+                            text-anchor="middle"
+                          >
+                            <tspan x="0" y="0">Scientific</tspan>
+                          </text>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //키워드 영역 -->
+            <!-- 효과 영역 -->
+            <section class="section project_info_effect">
+              <div class="section_title" data-gsap="fade-up">
+                <div class="wrap col">
+                  <h2 class="fs-title-1s">
+                    디자인210은
+                    <strong class="bold"
+                      >고객 경험 디자인 TX(Typo Experience)</strong
+                    >
+                    를 만들어&nbsp;<br />
+                    더욱 신선하고 유니크한 경험을 제안합니다.
+                  </h2>
+                </div>
+              </div>
+              <div class="wrap">
+                <ul class="project_info_effect_list">
+                  <li class="project_info_effect_item" data-gsap="fade-up">
+                    <figure>
+                      <img src="/images/project_info_effect_4.png" alt="" />
+                    </figure>
+                    <div class="project_info_effect_item_txt">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Branding</strong>
+                        <span class="fs-txt-2 bold">브랜딩효과</span>
+                      </h3>
+                      <p class="sub">
+                        전용서체는 브랜드가 가진 다양한 이미지를&nbsp;<br />하나로
+                        통일시켜 명확한 정체성을 구축합니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li
+                    class="project_info_effect_item"
+                    data-gsap="fade-up"
+                    data-gsap-delay="300"
+                  >
+                    <figure>
+                      <img src="/images/project_info_effect_2.png" alt="" />
+                    </figure>
+                    <div class="project_info_effect_item_txt">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Marketing</strong>
+                        <span class="fs-txt-2 bold">마케팅효과</span>
+                      </h3>
+                      <p class="sub">
+                        전용서체는 일관된 시각적 경험을 제공하며&nbsp;<br />
+                        신뢰감을 높이고 브랜드를 선명하게 각인시킵니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li
+                    class="project_info_effect_item"
+                    data-gsap="fade-up"
+                    data-gsap-delay="600"
+                  >
+                    <figure>
+                      <img src="/images/project_info_effect_6.png" alt="" />
+                    </figure>
+                    <div class="project_info_effect_item_txt">
+                      <h3>
+                        <strong class="fs-txt-5 boldEx">Communication</strong>
+                        <span class="fs-txt-2 bold">커뮤니케이션</span>
+                      </h3>
+                      <p class="sub">
+                        전용서체는 브랜드와 고객간의&nbsp;<br />커뮤니케이션
+                        접점이 됩니다.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <!-- //효과 영역 -->
+            <!-- 제작 프로세스 영역 -->
+            <section class="section project_info_process" data-gsap="fade">
+              <div class="section_title" data-gsap="fade-up">
+                <div class="wrap col">
+                  <h2 class="fs-txt-5 bold">서체 제작 프로세스</h2>
+                </div>
+              </div>
+              <div class="wrap">
+                <ul class="project_info_process_list">
+                  <li class="project_info_process_item" data-gsap="fade-right">
+                    <h3 class="project_info_process_item_title fs-txt-3">
+                      01. 분석 및 컨셉 설계
+                    </h3>
+                    <figure class="process_ic process_ic_1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        viewBox="0 0 37.5 41.5"
+                      >
+                        <path
+                          d="M33.79 22.01c-4.56 5.54-12.75 6.34-18.3 1.78-5.54-4.56-6.34-12.75-1.78-18.3 4.56-5.54 12.76-6.34 18.3-1.78 5.54 4.56 6.34 12.75 1.78 18.3Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M30.7 19.47a8.999 8.999 0 0 1-12.67 1.23A8.999 8.999 0 0 1 16.8 8.03 8.999 8.999 0 0 1 29.47 6.8a8.999 8.999 0 0 1 1.23 12.67Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M18.23 12.48c.19-.72.53-1.4 1.03-2.01a5.293 5.293 0 0 1 4.11-1.94M18.9 16.73a5.28 5.28 0 0 1-.75-1.86M6.14 40.75.75 36.21l9.14-11.33 5.51 4.53-9.26 11.34zM7.36 27.95l5.54 4.51M13.79 22.75l-2.63 3.2M16.93 25.26l-2.67 3.24"
+                          class="draw_line_1"
+                        />
+                      </svg>
+                    </figure>
+                    <ul>
+                      <li>브랜드 분석</li>
+                      <li>글꼴 개발 기획 및 SPEC</li>
+                      <li>디자인 방향 수립</li>
+                    </ul>
+                  </li>
+                  <li
+                    class="project_info_process_item"
+                    data-gsap="fade-right"
+                    data-gsap-delay="150"
+                  >
+                    <h3 class="project_info_process_item_title fs-txt-3">
+                      02. 시안작업
+                    </h3>
+                    <figure class="process_ic process_ic_2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        viewBox="0 0 37.5 43.5"
+                      >
+                        <path
+                          d="m22.74 21.67-4 3.72-4-3.71M18.75 25.75v3M13.75 31.75h10M13.75 34.75h10M13.75 37.75h10"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M7.89 18c-.5 3.23.41 6.25 2.21 8.53 2.49 3.16 3.65 7.17 3.65 11.19v.03c0 2.76 2.24 5 5 5h0c2.76 0 5-2.24 5-5v-.5c0-3.99 1.48-7.78 3.86-10.99 1.35-1.82 2.14-4.08 2.14-6.52 0-6.49-5.62-11.67-12.27-10.93-4.85.54-8.85 4.36-9.6 9.18ZM18.75.75v3M.75 19.75h3M33.75 19.75h3M7.75 29.75l-2 2M30.75 6.75l-2 2M29.75 30.75l2 2M5.75 6.75l2 2"
+                          class="draw_line_1"
+                        />
+                      </svg>
+                    </figure>
+                    <ul>
+                      <li>디자인 컨셉</li>
+                      <li>디자인 가이드라인</li>
+                      <li>시안확정</li>
+                    </ul>
+                  </li>
+                  <li
+                    class="project_info_process_item"
+                    data-gsap="fade-right"
+                    data-gsap-delay="300"
+                  >
+                    <h3 class="project_info_process_item_title fs-txt-3">
+                      03. 서체 제작
+                    </h3>
+                    <figure class="process_ic process_ic_3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        viewBox="0 0 37.81 37.75"
+                      >
+                        <path
+                          d="M.75.75h4.56v4.56H.75zM32.5.75h4.56v4.56H32.5zM.75 32.45h4.56v4.56H.75zM32.45 32.45h4.56v4.56h-4.56zM3.03 5.31v27.14M5.33 34.72h27.14M34.72 32.45V5.31M5.31 3.03H32.5"
+                          class="draw_line_1"
+                        />
+                        <text
+                          class="ic_text"
+                          transform="translate(13.66 24.87)"
+                        >
+                          <tspan x="0" y="0">T</tspan>
+                        </text>
+                      </svg>
+                    </figure>
+                    <ul>
+                      <li>모듈 / 빈출자 디자인</li>
+                      <li>조합 설계</li>
+                    </ul>
+                  </li>
+                  <li
+                    class="project_info_process_item"
+                    data-gsap="fade-right"
+                    data-gsap-delay="450"
+                  >
+                    <h3 class="project_info_process_item_title fs-txt-3">
+                      04. 최종 납품 및 사후관리
+                    </h3>
+                    <figure class="process_ic process_ic_4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        viewBox="0 0 31.45 40.5"
+                      >
+                        <path
+                          d="M9.15.75v8.4H.75l8.4-8.4z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M9.15.75H30.7v39H.75V9.15"
+                          class="draw_line_1"
+                        />
+                        <text class="ic_text" transform="translate(6.99 24.58)">
+                          <tspan x="0" y="0">Aa</tspan>
+                        </text>
+                      </svg>
+                    </figure>
+                    <ul>
+                      <li>조판 테스트 및 오탈자 검수</li>
+                      <li>TTF / OTF 제작</li>
+                      <li>시스템 테스트</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <!-- //제작 프로세스 영역 -->
+          </div>
+          <!-- //article_body -->
+          <div class="article_footer">
+            <h2 class="fs-title-1s" data-gsap="fade-up">
+              브랜드의 차별화된 전용서체 제작은&nbsp;<br />최고의
+              <strong class="bold">&nbsp;브랜드 마케팅</strong>&nbsp;방법입니다.
+            </h2>
+            <div class="buttons" data-gsap="fade-up">
+              <a href="./contact.html" class="button_ic outline big">
+                <span>전용서체 개발문의</span>
+                <i class="ic_arrow_right point"></i>
+              </a>
+              <a href="./project.html" class="button_ic outlineBlack big">
+                <span>디자인210 포트폴리오</span>
+                <i class="ic_arrow_right black"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- //article -->
+      </div>
+      <!-- //page project -->
+      <!-- top_button -->
+      <div
+        class="top_button outline"
+        data-include="./global/top_button.html"
+      ></div>
+      <!-- footer -->
+      <footer
+        id="footer"
+        class="outline"
+        data-include="./global/footer.html"
+      ></footer>
+      <!-- //footer -->
+    </div>
+
+    <!-- JS injected by webpack -->
+  </body>
+</html>

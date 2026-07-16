@@ -1,0 +1,731 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            if (!window.gsap) d.classList.remove("js");
+          }, 2000);
+        });
+      })();
+    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디자인210</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/webfont.css" />
+    <!-- CSS injected by webpack -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- swiper -->
+    <script src="/js/api/swiper-bundle.min.js"></script>
+    <!-- JS injected by webpack -->
+  </head>
+<body>
+    <a href="#page" class="skip_nav">본문 바로가기</a>
+<div class="wrapper" style="overflow-x: hidden;">
+    <!-- header -->
+    <header id="header">
+        <div id="header_wrap">
+            <div class="header_container">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1016.34 185.38"><path d="M64.85 0h48.35v139.55H18.11L0 122.59v-62.1l18.11-16.96h32.08l14.66 11.69V0Zm0 59.58h-16.5v63.93h16.5V59.58ZM147.83 43.54h73.56l16.96 16.04v29.56l-16.96 16.04H173.5v18.33h61.41v16.04h-87.08l-22.69-21.54V65.08l22.69-21.54Zm25.67 16.04v29.56H190V59.58h-16.5ZM352.71 43.54v16.04h-52.25v23.83h53.85v34.6l-22.68 21.54h-81.35v-16.04h53.85V99.45h-53.85V65.08l22.69-21.54h79.75ZM416.44 31.85h-50.18V4.59h50.18v27.27Zm0 107.7h-50.18V43.54h50.18v96.01ZM430.67 168.42v-17.87h50.18v18.79h12.38v-29.79h-46.75l-18.1-16.96v-62.1l18.1-16.96h32.08l12.83 10.31 12.83-10.31h37.35v120.3l-22.68 21.54h-70.12l-18.1-16.96Zm46.06-44.91h16.5V59.58h-16.5v63.93ZM618.36 139.55V59.58h-16.5v79.97h-48.35V43.54h37.35l12.83 10.31 12.83-10.31h32.08l18.11 16.96v79.06h-48.35ZM827.53 0h50.18v113.89h-50.18V0Zm0 123.51h50.18v16.04h-50.18v-16.04ZM1016.34 21.54v96.47l-22.68 21.54h-74.7l-22.69-21.54V21.54L918.96 0h74.7l22.68 21.54Zm-50.18-5.5h-19.71v107.47h19.71V16.04ZM748.47 40.56V16.04h16.73v52.48h-50.18l-16.96 16.04v29.33h50.18v-29.1h50.18l16.96-16.04V21.54L792.69 0h-76.31l-18.1 16.96v23.6h50.18Zm-50.41 82.95v16.04h117.33v-16.04H698.06Z"/></svg>
+                        </a>
+                    </h1>
+                    <nav class="menu menu_pc">
+                        <ul class="menu_list menu_pc_list">
+                            <li class="menu_item menu_pc_item">
+                                <a href="./about.html" class="current">
+                                    <span>디자인210</span>
+                                </a>
+                            </li>
+                            <li class="menu_item menu_pc_item">
+                                <a href="./service.html">
+                                    <span>사업분야</span>
+                                </a>
+                            </li>
+                            <li class="menu_item menu_pc_item">
+                                <a href="./project.html">
+                                    <span>프로젝트</span>
+                                </a>
+                            </li>
+                            <li class="menu_item menu_pc_item">
+                                <a href="./contact.html">
+                                    <span>문의하기</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- mobile -->
+                    <nav class="menu menu_mobile">
+                        <div class="hamburger_toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu_mobile_collapes">
+                            <ul class="menu_list menu_mobile_list">
+                                <li class="menu_item menu_mobile_item">
+                                    <a href="./about.html">
+                                        <span>디자인210</span>
+                                    </a>
+                                </li>
+                                <li class="menu_item menu_mobile_item">
+                                    <a href="./service.html">
+                                        <span>사업분야</span>
+                                    </a>
+                                </li>
+                                <li class="menu_item menu_mobile_item">
+                                    <a href="./project.html" class="current">
+                                        <span>프로젝트</span>
+                                    </a>
+                                </li>
+                                <li class="menu_item menu_mobile_item">
+                                    <a href="./contact.html">
+                                        <span>문의하기</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- 외부링크 -->
+                    <div class="link link_pc">
+                        <ul class="link_list link_pc_list">
+                            <li class="link_item link_pc_item"> <!-- 210쇼핑몰로 이동 -->
+                                <a href="http://www.design210.com/cloud" target="_blank">
+                                    <i class="ic_shop black"></i>
+                                    <span>210SHOP</span>
+                                </a>
+                            </li>
+                            <li class="link_item link_pc_item"> <!-- 210블로그로 이동 -->
+                                <a href="https://blog.naver.com/design_210" target="_blank">
+                                    <i class="ic_news black"></i>
+                                    <span>210NEWS</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- page - company -->
+    <div id="page" class="company">
+        <!-- article -->
+        <div class="article">
+            <!-- article_header -->
+            <div class="article_header">
+                <div class="wrap">
+                    <div class="breadcrumb" data-gsap="fade-down">
+                        <h3 class="fs-txt-0">회사소개</h3>
+                    </div>
+                    <div class="article_header_inner">
+                        <h2 class="fs-title-2" data-gsap="fade-up" data-gsap-delay="300">우리는 <strong class="boldEx">폰트를 만드는</strong><img class="emoji" src="/images/intro_pen.png" alt="" data-gsap="zoom-in" data-gsap-delay="350" data-gsap-ease="ease-out-back"> 디자인210입니다.</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- //article_header -->
+            <!-- article_body -->
+            <div class="article_body">
+                <!-- 소개 영역 -->
+                <section class="section company_about">
+                    <div class="wrap">
+                        <!-- swiper -->
+                        <div class="company_about_slide" data-gsap="fade-up" data-gsap-delay="500">
+                            <ul class="company_about_slide_list swiper-wrapper" style="transition-timing-function: linear;">
+                                <li class="company_about_slide_item swiper-slide">
+                                    <figure>
+                                        <img src="/images/about_slide_01.png" alt="디자인210 소개 이미지">
+                                    </figure>
+                                </li>
+                                <li class="company_about_slide_item swiper-slide">
+                                    <figure>
+                                        <img src="/images/about_slide_02.png" alt="디자인210 소개 이미지">
+                                    </figure>
+                                </li>
+                                <li class="company_about_slide_item swiper-slide">
+                                    <figure>
+                                        <img src="/images/about_slide_03.png" alt="디자인210 소개 이미지">
+                                    </figure>
+                                </li>
+                            </ul>
+                            <!-- 페이지네이션 -->
+                            <div class="company_about_slide_pagination">
+                            </div>
+                        </div>
+                        <!-- //swiper -->
+                    </div>
+                    <div class="company_about_content">
+                        <div class="wrap">
+                            <div class="company_about_content_left" data-gsap="fade-up">
+                                <h2 class="fs-title-1s">
+                                    함께 꿈꾸고,&nbsp;<br>
+                                    함께 이루는 <strong class="boldEx">디자인210</strong>
+                                </h2>
+                                <a class="button_ic big outline">
+                                    <span>회사소개서 다운로드</span>
+                                    <i class="ic_download point"></i>
+                                </a>
+                            </div>
+                            <div class="company_about_content_right" data-gsap="fade-up">
+                                <!-- <p>
+                                    국내 폰트 회사 중 자사 폰트를 최다 폰트를 보유하고 있는 디자인210은 끊임없이 변화하는 폰트디자인 트랜드 시장에서 한글의 독창적인 우수성과 아름다움을 폰트로 표현하고 
+                                    사용자의 입장을 고려한 우수하고 다양한 폰트 서비스를 제공하여 모든 사람들과 문화적 가치 교류와 공감을 함께 하고자 합니다.
+                                </p>
+                                <p>
+                                    디자인210의 모든 활동은 고객의 크리에이티브에 어울리는 최적의 폰트를 개발하고 소개하여 고객의 보다 나은 선택을 돕는 브랜드 미션을 달성하기 위한 것입니다.
+                                </p> -->
+                                <p class="txt">
+                                    국내 폰트 회사 중 자사 폰트를 최다 폰트를 보유하고 있는 디자인210은 끊임없이 변화하는 폰트디자인 트렌드로부터 
+                                    한글의 독창적인 우수성과 아름다움을 폰트로 표현하고 더 나아가 캘리그라피, 그래픽폰트, 이모티콘 등 디자인210만의 재치와 아이디어로 기존 폰트 플랫폼의 변화와 혁신을 추구하고 있습니다. 
+                                    한글 폰트를 향한 다채로운 시도와 사용자의 입장을 고려한 우수하고 다양한 폰트 서비스를 제공하여 모든 사람들과 문화적 가치 교류와 공감을 함께 하는 것이 우리의 서비스 지향점입니다.
+                                </p>
+                                <p class="txt">
+                                    디자인210은 고객 경험 디자인 TX(Typo Experience)를 만들어 누구나 자유롭게 누릴 수 있는 신선하고 유니크한 경험을 제안하기 위해 브랜드 전용서체와 방송용 폰트 제작 등 폰트디자인 분야에서 비즈니스 영역을 확대해 가고 있습니다.
+                                </p>
+                                <p class="txt">
+                                    디자인210의 모든 활동은 사용자의 크리에이티브에 어울리는 최적의 폰트를 개발하고 소개하여 보다 나은 선택을 돕는 브랜드 미션을 달성하기 위한 것입니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- line -->
+                    <div class="rolling_text"></div>
+                </section>
+                <!-- //소개 영역 -->
+                <!-- 히스토리 영역 -->
+                <section class="section company_history">
+                    <div class="section_title" data-gsap="fade-up">
+                        <div class="wrap center">
+                            <h2 class="fs-title-1s">
+                                디자인210이 <strong class="boldEx">걸어온 길</strong>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="wrap" data-gsap="fade-up">
+                        <span class="timeline"></span>
+                        <span class="timeline_active"></span>
+                        <ul class="company_history_list">
+                            <!-- 2023 -->
+                            <!-- 2022 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2022</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span class="fs-txt-2">고우영 화백 '고우영체' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>펀플로 전용서체 '펀플로 생존자' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>달라스튜디오 전용서체 '달라왕' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>땅스부대찌개 전용서체 '땅스부대찌개' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>평창문화도시재단 전용서체 '평창아름다름체' 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>평창문화도시재단 전용서체 '평창월오개체' 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>한글 캘리그래피티 아티스트 심소체 개발</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">관공서 폰트 공급 (소방청, 신안군청, 청도군청, 함양군청 등)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">엔터테인먼트 폰트 공급 (하이브, 큐브 등)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">미리디 (미리캔버스) 임베딩 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2021 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2021</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span>키글 전용서체 '코코비' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>신전떡볶이 전용서체 '신전' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>교동 전용서체 '교동' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>농심 전용서체 'NS신고딕' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="bold">방송채널 폰트 공급 (디즈니채널코리아, 스튜디오웨이브, 채널A 등)</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2020 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2020</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span>미래생활 잘풀리는집 전용서체 '잘풀리는오늘' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>미래생활 잘풀리는집 전용서체 '잘풀리는하루' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>E·LAND RETAIL 전용서체 'ELAND 초이스' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>E·LAND RETAIL 전용서체 'ELAND 나이스' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>김대건 신부 탄생 200주년 기념 전용서체 '솔뫼 김대건' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>시공사 전용서체 '시공' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>웰컴금융그룹 전용서체 '웰컴체' 개발</span>
+                                        
+                                        </a>
+                                    </li>
+                                    <li class="link">
+                                        <span>문화방송 전용서체 'MBC 1961' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>문화방송 전용서체 'MBC 1961 굴림' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>샌드박스 전용서체 'SB 어그로' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="bold">홈앤쇼핑, 우리홈쇼핑 방송용 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">리아모어 (망고보드) 임베딩 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2019 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2019</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span>210 dadarum 폰트App 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>펜먼 전용서체 '펜먼' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>달라스튜디오 전용서체 '달라왕' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>OtvN 채널 전용서체 'OtvN 설렌고딕' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>한국가스공사 전용서체 'KOGAS' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>세이브더칠드런 전용서체 '세이브더칠드런' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>레시피코리아 전용서체 '레시피코리아' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>CJ E&M XtvN 전용서체 '놀러온굴림' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>CJ E&M tvN 아스달 전용서체 '아스달' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>스트릿츄러스 전용서체 '스트릿츄러스' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>데브시스터즈 전용서체 '쿠키런' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="bold">CI/BI 폰트 공급 (펭수, LG생활건강)</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2018 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2018</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span>한국야구르트 BI 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>한국화장품 천가선 BI 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>㈜아임웹 전용서체 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>비비트리 전용서체 '하르방' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>한남대학교 전용서체 '한남 자유' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>한남대학교 전용서체 '한남 진리' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>하나로애드컴 전용서체 '하나로고딕' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>유앤피플 전용서체 '고딕' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="bold">온라인 게임, 영상제작용 폰트 공급 (㈜엔씨소프트, ㈜세가퍼블리싱코리아 등)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">카카오 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">방송사 폰트 공급 (㈜SBS+, 한국방송공사(KBS), 채널A 등)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">메가스터디교육㈜ 이러닝용 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2017 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2017</span>
+                                </div>
+                                <ul>
+                                    <li class="link">
+                                        <span>Olive 채널 전용서체 'OLIVE YOLO' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>Olive 채널 전용서체 'OLIVE 취향' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>CJ E&M 전용서체 'Onstyle' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>CJ E&M tvN 전용서체 '즐거운명조체' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>비비트리 전용서체 '제주감귤' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>카카오이모티콘 '직장인의한마디' 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>휴먼웍스 전용서체 '휴먼바람체' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="bold">CF제작용 폰트 공급(알바천국, 다방, 에스케이플래닛)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">BI용 폰트 공급 (OnStyle, Olive TV, CJ 제일제당㈜)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">영화 ‘특별시민’ 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2016 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2016</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>디자인210 기업부설 연구소 설립</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>OtvN 채널 전용서체 'OtvN 명조' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>OtvN 채널 전용서체 'OtvN 복고' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>OtvN 채널 전용서체 'OtvN 고딕' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 전용서체 '즐거운이야기' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>크라운제과 전용서체 'Crown 마이쮸' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>㈜한국야쿠르트 '인디언구스베리비타C' 폰트 개발</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">CF제작용 폰트 공급(동서식품 맥심, 요기요, 롯데)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">광고용 폰트 공급(광동제약, 미스터피자)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">크라운제과 패키지제작용 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">모바일 탑재용 폰트 공급(㈜엔씨소프트, ㈜옐로우퍼플스)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">국립한글박물관 역사기록용 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2015 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2015</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>㈜디자인210 법인전환</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 채널 전용서체 '꽃보다할배' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 채널 전용서체 '삼시세끼' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 채널 전용서체 '응답하라' 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 채널 전용서체 '오늘부터 출근' 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span>한국야구르트 BI개발</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">자막용 폰트 공급(JTBC, CJ홈쇼핑, GS홈쇼핑)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">방송용 폰트 공급(해커스, Animax, 에이프릴스킨)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">모바일 탑재용 폰트 공급(TCT, LG스마트월드)</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">LG U+ CF용 폰트 공급</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 2014 -->
+                            <li class="company_history_item">
+                                <div class="year">
+                                    <span>2014</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>디자인210설립 ✨</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>tvN 브랜드 전용서체 개발</span>
+                                    </li>
+                                    <li class="link">
+                                        <span>TUBAn 라바캐릭터 한글, 영문폰트 개발</span>
+                                        
+                                    </li>
+                                    <li class="link">
+                                        <span>비상교육 수식용 폰트 개발</span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span>하동관 CI 개발</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">NAVER 소프트웨어 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">MBC 자막용 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">LG CNS 모바일 폰트 서비스</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">오리온 커뮤니케이션즈 광고용 폰트 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">넷마블게임즈 폰트 및 캘리그라피 공급</span>
+                                    </li>
+                                    <li>
+                                        <span class="bold">모바일게임용 폰트 공급('몬스터 스트라이크', '천년의 거신')</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="loadmore">
+                            <div class="loadmore_button">
+                                <span>연혁 더보기</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 459.325 459.325">
+                                    <path d="M459.319 229.668c0 22.201-17.992 40.193-40.205 40.193H269.85v149.271c0 22.207-17.998 40.199-40.196 40.193-11.101 0-21.149-4.492-28.416-11.763-7.276-7.281-11.774-17.324-11.769-28.419l-.006-149.288H40.181c-11.094 0-21.134-4.492-28.416-11.774C4.501 250.817.006 240.769.006 229.668 0 207.471 17.992 189.475 40.202 189.475h149.267V40.202C189.469 17.998 207.471 0 229.671 0c22.192.006 40.178 17.986 40.19 40.187v149.288h149.282c22.196.012 40.165 17.996 40.176 40.193z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //히스토리 영역 -->
+            </div>
+            <!-- //article_body -->
+        </div>
+        <!-- //article -->
+    </div>
+    <!-- //page - company -->
+
+
+
+    <!-- interactive -->
+    <div class="interactive">
+        <div class="interactive_inner">
+        <div class="wrap">
+            <h2 class="fs-txt-4">
+            <p class="boldEx">210에서 폰트로</p>
+            <p class="boldEx">하고싶은 이야기가 있나요?</p>
+            </h2>
+            <div class="buttons flex">
+            <a href="./project_info.html" class="button_ic big bgBlack">
+                <span>브랜드 전용서체</span>
+                <i class="ic_arrow_right white"></i>
+            </a>
+            <a href="./contact.html" class="button_ic big bgBlack">
+                <span>폰트 제휴 · 개발문의</span>
+                <i class="ic_arrow_right white"></i>
+            </a>
+            </div>
+        </div>
+        </div>
+        <!-- 퀵메뉴 -->
+        <div class="quickmenu_wrap">
+        <a href="/" class="quickmenu_control">
+            <i class="quickmenu_control_logo">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 266.65 208.06"
+            >
+                <path
+                d="M191.83 0h74.82v169.8h-74.82V0Zm0 184.14h74.82v23.91h-74.82v-23.91ZM75.28 60.57V23.95h24.97v78.35H25.32L0 126.25v43.8h74.93V126.6h74.93l25.33-23.95V32.16L141.31 0H27.37L.35 25.32v35.25h74.93zM0 184.11h175.19v23.95H0z"
+                />
+            </svg>
+            </i>
+            <div class="quickmenu_control_hover">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                viewBox="0 0 320.591 320.591"
+            >
+                <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                />
+                <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                />
+            </svg>
+            </div>
+        </a>
+        <div class="quickmenu">
+            <div class="quickmenu_inner">
+            <ul class="quickmenu_list">
+                <li class="quickmenu_item">
+                <a href="/" target="_blank">
+                    <span>210SHOP 바로가기</span>
+                    <i class="ic_shop point"></i>
+                </a>
+                </li>
+                <li class="quickmenu_item">
+                <a href="./contact.html">
+                    <span>폰트 제휴 · 개발문의</span>
+                    <i class="ic_document point"></i>
+                </a>
+                </li>
+                <li class="quickmenu_item">
+                <a href="#top">
+                    <span>맨위로가기</span>
+                    <i class="ic_arrow_top white"></i>
+                </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--//interactive -->
+    <!-- footer -->
+    <footer id="footer" data-include="./global/footer.html"></footer>
+    <!-- //footer -->
+</div>
+
+<!-- JS injected by webpack -->
+</body>
+</html> 

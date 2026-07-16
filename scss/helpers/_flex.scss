@@ -1,0 +1,201 @@
+// ** flex.scss
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align($align) {
+    @if ($align == center) {
+        -webkit-box-align: center;
+        -moz-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    } @else if ($align == stretch) {
+        -webkit-box-align: stretch;
+        -moz-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    } @else if ($align == baseline) {
+        -webkit-box-align: baseline;
+        -moz-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    } @else if ($align == end) {
+        -webkit-box-align: end;
+        -moz-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    } @else if ($align == start) {
+        -webkit-box-align: start;
+        -moz-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin alignSelf($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+}
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify($position) {
+    @if ($position == center) {
+        -webkit-box-pack: center;
+        -moz-box-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    } @else if ($position == start) {
+        -webkit-box-pack: start;
+        -moz-box-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    } @else if ($position == end) {
+        -webkit-box-pack: end;
+        -moz-box-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    } @else if ($position == center) {
+        -webkit-box-pack: center;
+        -moz-box-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    } @else if ($position == between) {
+        -webkit-box-pack: justify;
+        -moz-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin direction($direction) {
+    @if ($direction == col) {
+        -webkit-box-orient: vertical;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    } @else if ($direction == row) {
+        -webkit-box-orient: horizontal;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    } @else if ($direction == rowReverse) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -moz-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }@else if ($direction == colReverse) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -moz-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin wrap($wrap) {
+    @if ($wrap == y) {
+        -webkit-box-lines: multiple;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    } @else if ($wrap == n) {
+        -webkit-box-lines: single;
+        -moz-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+}
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+}
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin grow($grow) {
+    -webkit-flex-grow: $grow;
+    -moz-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+    -ms-flex-positive: $grow;
+    flex-grow: $grow;
+}
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin shrink($shrink) {
+    -webkit-flex-shrink: $shrink;
+    -moz-flex-shrink: $shrink;
+    -ms-flex-shrink: $shrink;
+    -ms-flex-negative: $shrink;
+    flex-shrink: $shrink;
+}
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin basis($width) {
+    -webkit-flex-basis: $width;
+    -moz-flex-basis: $width;
+    -ms-flex-basis: $width;
+    flex-basis: $width;
+}
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+// all center
+@mixin center {
+    @include flexbox;
+    @include justify(center);
+    @include align(center);
+}
+
+.flex {
+    @include flexbox;
+    &.column {    
+        @include direction(col);
+    }
+    &.between {
+        width: 100%;
+        height: 100%;
+        @include justify(between);
+    }
+}
+.flex_cen_1 {
+    @include flexbox;
+    @include align(center);
+}
+.flex_cen_2 {
+    @include flexbox;
+    @include justify(center);
+}
+.flex_cen_3 {
+    @include flexbox;
+    @include justify(center);
+    @include align(center);
+}

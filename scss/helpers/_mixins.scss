@@ -1,0 +1,226 @@
+// ** mixins.scss
+// ** 믹스인
+
+// 글자 줄임 표시
+@mixin ellipsis($lines: 1) {
+    @if ($lines==1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+// 글자 숨기기
+@mixin text-hidden {
+    text-indent: -9999rem;
+    overflow: hidden;
+}
+@mixin invisible {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+// 백그라운드 이미지 삽입
+@mixin bgi($imageName, $path: "./images/", $format: "png") {
+    background-image: url(#{$path}#{$imageName}.#{$format});
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+// 그라디언트 생성
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+    // fallback/image non-cover color
+    background-color: $from;
+    // Firefox 3.6+
+    background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+    // Safari 4+, Chrome 1+
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+    // Safari 5.1+, Chrome 10+
+    background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+    // Opera 11.10+
+    background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+    // IE10+
+    background: -ms-linear-gradient(left, $from 0%, $to $stop);
+    // Standard
+    background: linear-gradient(to right, $from 0%, $to $stop);
+    // IE6-9
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
+}
+
+//keyframes
+@mixin keyframes($animation-name: animaton) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+//animation
+@mixin animation($animation, $duration, $repeat: 1, $delay: 0s, $mode: forwards) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-iteration-count: $repeat;
+    -webkit-animation-fill-mode: $mode;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-iteration-count: $repeat;
+    -moz-animation-fill-mode: $mode;
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-iteration-count: $repeat;
+    -o-animation-fill-mode: $mode;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-iteration-count: $repeat;
+    animation-fill-mode: $mode;
+}
+
+// pointer-events:auto 처리
+@mixin pointer-auto {
+    -moz-pointer-events: auto;
+    -webkit-pointer-events: auto;
+    -o-pointer-events: auto;
+    -ms-pointer-events: auto;
+    pointer-events: auto;
+}
+
+// pointer-events:none 처리
+@mixin pointer-none {
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -o-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+}
+
+// drag 막기
+@mixin select-none {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+// backface-visibility:hidden 처리
+@mixin backface-hide {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+// placeholder
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+// Rotate
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+// Border Style
+@mixin border($borderWidth, $borderColor, $radius: 0) {
+    border: $borderWidth solid $borderColor;
+    @if $radius != 0 {
+        border-radius: $radius;
+    }
+}
+
+// Absolute
+@mixin absolute($wrap-bg: fales) {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    @content;
+    //wrap
+    @if ($wrap-bg == true) {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+// Arrow Icon
+// widtgh, height 값 필요
+// 45deg > | 225deg < | 135deg ∨ | 315deg ^
+@mixin arrow($borderColor, $width: "2px", $rotate: "45deg") {
+    content: '';
+    position: absolute;
+    border-top: #{$width} solid $borderColor;
+    border-right: #{$width} solid $borderColor;
+    transform: rotate(#{$rotate}) translate(0);
+    -webkit-transform: rotate(#{$rotate}) translate(0);
+    @content;
+}

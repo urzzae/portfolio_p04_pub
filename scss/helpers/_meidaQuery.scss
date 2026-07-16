@@ -1,0 +1,47 @@
+// ** meidaQuery.scss
+// ** Break Point
+
+$lap: 1520px;
+$lapSmall: 1124px; //1280
+$tablet: 768px; //912
+$mobile: 540px;
+$min: 460px;
+
+// ---------- * ----------
+
+// lap
+@mixin lap {
+  @media screen and (max-width: #{$lap}) {
+    @content;
+  }
+}
+// lapSmall
+@mixin lapSmall {
+  @media screen and (max-width: #{$lapSmall}) {
+    @content;
+  }
+}
+// Tablet
+@mixin tablet {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+// Mobile
+@mixin mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+// Min
+@mixin min {
+  @media screen and (max-width: #{$min}) {
+    @content;
+  }
+}
+// lapSmall ~ tablet
+@mixin lapSmall-tablet {
+  @media screen and (min-width: #{$tablet}) and (max-width: #{$lapSmall}) {
+    @content;
+  }
+}

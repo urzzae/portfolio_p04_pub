@@ -1,0 +1,43 @@
+@use "../../helpers" as *;
+
+// ** company_slide.scss
+
+.company_about {
+  &_slide {
+    position: relative;
+    overflow: hidden;
+    &_item {
+      position: relative;
+      img {
+        max-width: 100%;
+      }
+    }
+    &_pagination {
+      position: absolute;
+      z-index: 9;
+      bottom: 35px !important;
+      @include flex-center;
+      @include mq-lapSmall {
+        bottom: 15px !important;
+      }
+      span {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        transition: all 0.15s ease-in-out;
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+          transition: all 0.15s ease-in-out;
+        }
+        &:not(:last-child) {
+          margin-right: 8px !important;
+        }
+        @include mq-lapSmall {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}

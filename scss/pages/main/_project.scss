@@ -1,0 +1,303 @@
+@use '../../helpers' as *; 
+
+// ** main_project.scss
+
+.main_project {
+    &_list {
+        @include flex-flexbox;
+        @include flex-direction(col);
+    }
+    &_item {
+        position: relative;
+        width: 100vw;
+        @include flex-center;
+        cursor: pointer;
+        overflow: hidden;
+        .base, .hover {
+            .banner_wrap {
+                img {
+                    max-width: 80vw;
+                }
+            }
+        }
+        .base {
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            @include flex-flexbox;
+            @include flex-justify(center);
+        }
+        // 마우스오버시 애니메이션 추가
+        .hover {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            .bg_wrap {
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                @include mixin-transform(translate3d(0,101%,0));
+                transition: all .35s ease-in-out;
+                //top: inherit;
+                &.slide {
+                    -webkit-animation-name: slide;
+                    -moz-animation-name: slide;
+                    -o-animation-name: slide;
+                    animation-name: slide;
+
+                    -webkit-animation-duration: .25s;
+                    -moz-animation-duration: .25s;
+                    -o-animation-duration: .25s;
+                    animation-duration: .25s;
+
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation-fill-mode: forwards;
+                    -o-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+
+                    -webkit-animation-timing-function: linear;
+                    -moz-animation-timing-function: linear;
+                    -o-animation-timing-function: linear;
+                    animation-timing-function: linear;
+                }
+                &.down {
+                    -webkit-animation-name: slide-down;
+                    -moz-animation-name: slide-down;
+                    -o-animation-name: slide-down;
+                    animation-name: slide-down;
+
+                    -webkit-animation-duration: .35s;
+                    -moz-animation-duration: .35s;
+                    -o-animation-duration: .35s;
+                    animation-duration: .35s;
+
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation-fill-mode: forwards;
+                    -o-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+
+                    -webkit-animation-timing-function: linear;
+                    -moz-animation-timing-function: linear;
+                    -o-animation-timing-function: linear;
+                    animation-timing-function: linear;
+                }
+                &.up {
+                    -webkit-animation-name: slide-up;
+                    -moz-animation-name: slide-up;
+                    -o-animation-name: slide-up;
+                    animation-name: slide-up;
+
+                    -webkit-animation-duration: .35s;
+                    -moz-animation-duration: .35s;
+                    -o-animation-duration: .35s;
+                    animation-duration: .35s;
+
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation-fill-mode: forwards;
+                    -o-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+
+                    -webkit-animation-timing-function: linear;
+                    -moz-animation-timing-function: linear;
+                    -o-animation-timing-function: linear;
+                    animation-timing-function: linear;
+                }
+            }
+            .banner_wrap {
+                position: relative;
+                @include flex-flexbox;
+                @include flex-justify(start);
+                opacity: 0;
+                transition: .25s ease-in-out;
+                overflow: hidden;
+                .hover_banner {
+                    position: relative;
+                    @include flex-flexbox;
+                    @include flex-align(center);
+                    width: fit-content;
+                    height: 100%;
+                    padding: 0 1%;
+                    &.original {
+                        -webkit-animation-name: rolling-left;
+                        -moz-animation-name: rolling-left;
+                        -o-animation-name: rolling-left;
+                        animation-name: rolling-left;
+
+                        -webkit-animation-duration: 45s;
+                        -moz-animation-duration: 45s;
+                        -o-animation-duration: 45s;
+                        animation-duration: 45s;
+
+                        -webkit-animation-play-state: paused;
+                        -moz-animation-play-state: paused;
+                        -o-animation-play-state: paused;
+                        animation-play-state: paused;
+
+                        -webkit-animation-direction: normal;
+                        -moz-animation-direction: normal;
+                        -o-animation-direction: normal;
+                        animation-direction: normal;
+
+                        -webkit-animation-fill-mode: forwards;
+                        -moz-animation-fill-mode: forwards;
+                        -o-animation-fill-mode: forwards;
+                        animation-fill-mode: forwards;
+
+                        -webkit-animation-timing-function: linear;
+                        -moz-animation-timing-function: linear;
+                        -o-animation-timing-function: linear;
+                        animation-timing-function: linear;
+
+                        -webkit-animation-iteration-count: infinite;
+                        -moz-animation-iteration-count: infinite;
+                        -o-animation-iteration-count: infinite;
+                        animation-iteration-count: infinite;
+                    }
+                    &.clone {
+                        -webkit-animation-name: rolling-left-clone;
+                        -moz-animation-name: rolling-left-clone;
+                        -o-animation-name: rolling-left-clone;
+                        animation-name: rolling-left-clone;
+
+                        -webkit-animation-duration: 45s;
+                        -moz-animation-duration: 45s;
+                        -o-animation-duration: 45s;
+                        animation-duration: 45s;
+
+                        -webkit-animation-play-state: paused;
+                        -moz-animation-play-state: paused;
+                        -o-animation-play-state: paused;
+                        animation-play-state: paused;
+
+                        -webkit-animation-direction: normal;
+                        -moz-animation-direction: normal;
+                        -o-animation-direction: normal;
+                        animation-direction: normal;
+
+                        -webkit-animation-fill-mode: none;
+                        -moz-animation-fill-mode: none;
+                        -o-animation-fill-mode: none;
+                        animation-fill-mode: none;
+
+                        -webkit-animation-timing-function: linear;
+                        -moz-animation-timing-function: linear;
+                        -o-animation-timing-function: linear;
+                        animation-timing-function: linear;
+
+                        -webkit-animation-iteration-count: infinite;
+                        -moz-animation-iteration-count: infinite;
+                        -o-animation-iteration-count: infinite;
+                        animation-iteration-count: infinite;
+                    }
+                }
+            }
+        }
+        &:hover {
+            .hover {
+                .banner_wrap {
+                    opacity: 1;
+                    .hover_banner {
+                        &.original, &.clone {
+                            -webkit-animation-play-state: running;
+                            -moz-animation-play-state: running;
+                            -o-animation-play-state: running;
+                            animation-play-state: running;
+                        }
+                    }
+                }
+            }
+        }
+        // 배경색상, 라인 추가
+        &:not(:first-child) {
+            border-top: 1px solid $colorLineGray;
+        }
+        &:nth-child(1) {
+            //border-top: 1px solid $colorLineGray;
+            .hover {
+                .bg_wrap {
+                    background: #81c859;
+                }
+            }
+        }
+        &:nth-child(2) {
+            .hover {
+                .bg_wrap {
+                    background: #add9f4;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .hover {
+                .bg_wrap {
+                    background: #cca8f2; 
+                }
+            }
+        }
+        &:nth-child(4) {
+            .hover {
+                .bg_wrap {
+                    background: #e2dab3;
+                }
+            }
+        }
+        &:nth-child(5) {
+            .hover {
+                .bg_wrap {
+                    background: #ffc63b;
+                }
+            }
+        }
+        &:nth-child(6) {
+            .hover {
+                .bg_wrap {
+                    background: #e9432b;
+                }
+            }
+        }
+    }
+}
+
+// 마우스오버시 실행되는 애니메이션
+@include mixin-keyframes(rolling-left) {
+    0% {
+        @include mixin-translate(0, 0);
+    }
+    50% {
+        @include mixin-translate(-100%, 0);
+    }
+    50.01% {
+        @include mixin-translate(100%, 0);
+    }
+    100% {
+        @include mixin-translate(0, 0);
+    }
+}
+@include mixin-keyframes(rolling-left-clone) {
+    0% {
+        @include mixin-translate(0, 0);
+    }
+    100% {
+        @include mixin-translate(-200%, 0);
+    }
+}
+@include mixin-keyframes(slide) {
+    100% {
+        @include mixin-translate(0, 0);
+    }
+}
+@include mixin-keyframes(slide-down) {
+    100% {
+        @include mixin-translate(0, 101%);
+    }
+}
+@include mixin-keyframes(slide-up) {
+    100% {
+        @include mixin-translate(0, -101%);
+    }
+}

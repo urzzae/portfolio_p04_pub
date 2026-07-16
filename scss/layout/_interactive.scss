@@ -1,0 +1,42 @@
+@use "../helpers" as *;
+
+// ** interactive.scss
+
+.interactive {
+  position: relative;
+  &_inner {
+    background: $colorLightBgGray;
+    position: relative;
+    padding: 125px 0;
+    @include mq-lapSmall {
+      padding: 65px 0;
+    }
+    @include mq-tablet {
+      padding: 65px 0;
+    }
+    overflow: hidden;
+    .wrap {
+      position: relative;
+      z-index: 1;
+      @include flex-flexbox;
+      @include flex-direction(col);
+    }
+    &::before {
+      @include mixin-absolute;
+      top: 50%;
+      @include mixin-transform(translateY(-50%));
+      right: clamp(-50px, -5vw, -110px);
+      background: url(/images/contact_banner_bg.png) no-repeat;
+      width: clamp(150px, 34.4vw, 660px);
+      height: clamp(117px, 26.8vw, 514px);
+      background-size: 100% auto;
+      opacity: 0.45;
+    }
+  }
+  .buttons {
+    padding-top: 35px;
+    @include mq-tablet {
+      padding-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use '../../helpers' as *; 
+
+// ** careers_value.scss
+
+.value {
+    padding-bottom: 185px;
+    &_list {
+        @include flex-flexbox;
+    }
+    &_item {
+        width: 33.333%;
+        border-radius: 10px;
+        padding: 16% 2.2% 2.2% 2.2%;
+        background-color: $colorBgGray;
+        &:not(:last-child) {
+            margin-right: 3.333%;
+        }
+        strong {
+            width: 100%;
+            font-family: $fontBoldEx;
+            padding-bottom: 15px;
+        }
+        p {
+            line-height: 1.8;
+        }
+    }
+}

@@ -1,0 +1,924 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            if (!window.gsap) d.classList.remove("js");
+          }, 2000);
+        });
+      })();
+    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디자인210</title>
+    <link rel="stylesheet" type="text/css" href="/css/webfont.css" />
+    <!-- CSS injected by webpack -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- JS injected by webpack -->
+  </head>
+  <body>
+    <a href="#page" class="skip_nav">본문 바로가기</a>
+    <div class="wrapper" style="overflow-x: hidden">
+      <!-- header -->
+      <header id="header">
+        <div id="header_wrap">
+          <div class="header_container">
+            <div class="header_inner">
+              <h1 class="logo">
+                <a href="./index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1016.34 185.38"
+                  >
+                    <path
+                      d="M64.85 0h48.35v139.55H18.11L0 122.59v-62.1l18.11-16.96h32.08l14.66 11.69V0Zm0 59.58h-16.5v63.93h16.5V59.58ZM147.83 43.54h73.56l16.96 16.04v29.56l-16.96 16.04H173.5v18.33h61.41v16.04h-87.08l-22.69-21.54V65.08l22.69-21.54Zm25.67 16.04v29.56H190V59.58h-16.5ZM352.71 43.54v16.04h-52.25v23.83h53.85v34.6l-22.68 21.54h-81.35v-16.04h53.85V99.45h-53.85V65.08l22.69-21.54h79.75ZM416.44 31.85h-50.18V4.59h50.18v27.27Zm0 107.7h-50.18V43.54h50.18v96.01ZM430.67 168.42v-17.87h50.18v18.79h12.38v-29.79h-46.75l-18.1-16.96v-62.1l18.1-16.96h32.08l12.83 10.31 12.83-10.31h37.35v120.3l-22.68 21.54h-70.12l-18.1-16.96Zm46.06-44.91h16.5V59.58h-16.5v63.93ZM618.36 139.55V59.58h-16.5v79.97h-48.35V43.54h37.35l12.83 10.31 12.83-10.31h32.08l18.11 16.96v79.06h-48.35ZM827.53 0h50.18v113.89h-50.18V0Zm0 123.51h50.18v16.04h-50.18v-16.04ZM1016.34 21.54v96.47l-22.68 21.54h-74.7l-22.69-21.54V21.54L918.96 0h74.7l22.68 21.54Zm-50.18-5.5h-19.71v107.47h19.71V16.04ZM748.47 40.56V16.04h16.73v52.48h-50.18l-16.96 16.04v29.33h50.18v-29.1h50.18l16.96-16.04V21.54L792.69 0h-76.31l-18.1 16.96v23.6h50.18Zm-50.41 82.95v16.04h117.33v-16.04H698.06Z"
+                    />
+                  </svg>
+                </a>
+              </h1>
+              <nav class="menu menu_pc">
+                <ul class="menu_list menu_pc_list">
+                  <li class="menu_item menu_pc_item">
+                    <a href="./about.html">
+                      <span>디자인210</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./service.html">
+                      <span>사업분야</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./project.html">
+                      <span>프로젝트</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./contact.html">
+                      <span>문의하기</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile -->
+              <nav class="menu menu_mobile">
+                <div class="hamburger_toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="menu_mobile_collapes">
+                  <ul class="menu_list menu_mobile_list">
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./about.html">
+                        <span>디자인210</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./service.html">
+                        <span>사업분야</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./project.html" class="current">
+                        <span>프로젝트</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./contact.html">
+                        <span>문의하기</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- 외부링크 -->
+              <div class="link link_pc">
+                <ul class="link_list link_pc_list">
+                  <li class="link_item link_pc_item">
+                    <!-- 210쇼핑몰로 이동 -->
+                    <a href="http://www.design210.com/cloud" target="_blank">
+                      <i class="ic_shop black"></i>
+                      <span>210SHOP</span>
+                    </a>
+                  </li>
+                  <li class="link_item link_pc_item">
+                    <!-- 210블로그로 이동 -->
+                    <a href="https://blog.naver.com/design_210" target="_blank">
+                      <i class="ic_news black"></i>
+                      <span>210NEWS</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- page - recruit -->
+      <div id="page" class="careers">
+        <!-- 본문 시작 contents -->
+        <div class="article">
+          <div class="article_header">
+            <div class="wrap">
+              <div class="breadcrumb" data-gsap="fade-down">
+                <h3 class="fs-txt-0">인재채용</h3>
+              </div>
+              <div class="article_header_inner">
+                <h1
+                  class="fs-title-2"
+                  data-gsap="fade-up"
+                  data-gsap-delay="300"
+                >
+                  디자인210에서 <strong class="boldEx">당신의 이야기</strong>를
+                  들려주세요.<img
+                    class="emoji"
+                    src="/images/intro_careers.png"
+                    alt=""
+                    data-gsap="zoom-in"
+                    data-gsap-delay="350"
+                    data-gsap-ease="ease-out-back"
+                  />
+                </h1>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="rolling_text"></div>
+          </div>
+          <!-- article_body -->
+          <div class="article_body" data-gsap="fade-up" data-gsap-delay="500">
+            <!-- 기업소개 영역 -->
+            <section class="section value">
+              <div class="section_title">
+                <div class="wrap">
+                  <h2 class="fs-txt-5 boldEx">
+                    디자인210은 이런 가치를 지향합니다.
+                  </h2>
+                </div>
+              </div>
+              <div class="wrap">
+                <ul class="value_list">
+                  <li class="value_item" data-gsap="fade-up">
+                    <strong class="fs-txt-3">Challenge</strong>
+                    <p class="sub">
+                      디자인210은 끊임없는 도전을 통해&nbsp;<br />
+                      성숙한 성장을 함께 이루고자 합니다.
+                    </p>
+                  </li>
+                  <li
+                    class="value_item"
+                    data-gsap="fade-up"
+                    data-gsap-delay="300"
+                  >
+                    <strong class="fs-txt-3">Smart Work</strong>
+                    <p class="sub">
+                      디자인210은 효율적으로 일하는 방식의 진화,&nbsp;<br />
+                      스마트 워크를 추구합니다.
+                    </p>
+                  </li>
+                  <li
+                    class="value_item"
+                    data-gsap="fade-up"
+                    data-gsap-delay="600"
+                  >
+                    <strong class="fs-txt-3">Shared growth</strong>
+                    <p class="sub">
+                      디자인210은 특정한 한 분야에 머무르지 않고&nbsp;<br />
+                      다양성을 추구합니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <!-- //기업소개 영역 -->
+            <!-- 기업문화 영역 -->
+            <section class="section culture">
+              <div class="section_title" data-gsap="fade-up">
+                <div class="wrap">
+                  <h2 class="fs-txt-5 boldEx">디자인210의 문화</h2>
+                </div>
+              </div>
+              <div class="wrap" data-gsap="fade-up">
+                <ul class="culture_list">
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic calendar">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 375.5 349.53"
+                      >
+                        <title>달력</title>
+                        <path
+                          d="M355.66 39.26c2.12 0 3.84 1.72 3.84 3.84v286.58c0 2.12-1.72 3.84-3.84 3.84H19.84c-2.12 0-3.84-1.72-3.84-3.84V43.11c0-2.12 1.72-3.84 3.84-3.84h335.82m0-16H19.84C8.88 23.26 0 32.15 0 43.11v286.58c0 10.96 8.88 19.84 19.84 19.84h335.82c10.96 0 19.84-8.88 19.84-19.84V43.11c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M53.1 8v45.35M106.96 8v45.35M160.82 8v45.35M214.68 8v45.35M268.54 8v45.35M322.4 8v45.35M322.4 108.48H53.1M91.46 165.24H58.8M166.54 165.24h-32.66M241.63 165.24h-32.67M316.71 165.24h-32.67M91.46 219H58.8M166.54 219h-32.66M241.63 219h-32.67M316.71 219h-32.67M91.46 272.76H58.8M166.54 272.76h-32.66M241.63 272.76h-32.67M316.71 272.76h-32.67M104.08 8v45.35"
+                          class="draw_line_2"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>01.</strong> 주 4일제
+                      </h3>
+                      <p class="txt sub">
+                        근무 환경 개선을 통해 생산성 및 복지 향상을&nbsp;
+                        <br />높이고자 주 4일제를 시행하고 있습니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic clock">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 343.86 343.86"
+                      >
+                        <title>시계</title>
+                        <path
+                          d="M171.93 73.25v98.68h-70.04"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="M171.93 16c41.65 0 80.81 16.22 110.26 45.67 29.45 29.45 45.67 68.61 45.67 110.26s-16.22 80.81-45.67 110.26c-29.45 29.45-68.61 45.67-110.26 45.67s-80.81-16.22-110.26-45.67C32.22 252.74 16 213.58 16 171.93S32.22 91.12 61.67 61.67C91.12 32.22 130.28 16 171.93 16m0-16C76.98 0 0 76.98 0 171.93s76.98 171.93 171.93 171.93 171.93-76.98 171.93-171.93S266.88 0 171.93 0Z"
+                          style="fill: #191919"
+                        />
+                        <path
+                          d="M171.93 8.82v32.83M8.82 171.93h32.83M171.93 335.04V302.2M335.04 171.93H302.2"
+                          class="draw_line_2"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>02.</strong> 시차출퇴근제
+                      </h3>
+                      <p class="txt sub">
+                        9시 또는 9시30분 출근시간을 선택할 수 있는&nbsp;
+                        <br />시차출퇴근제를 시행하고 있습니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic airplane">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 340.74 340.74"
+                      >
+                        <title>비행기</title>
+                        <path
+                          d="M58.09 232.91 9.66 184.48c-2.21-2.21-2.21-5.8 0-8.02l17.86-17.86a5.658 5.658 0 0 1 6.04-1.28l63.2 24.29-38.67 51.3ZM151.44 139.55 60.85 48.96c-4.14-4.14-4.91-10.08-1.73-13.27L84.84 9.97c2.28-2.28 6.09-2.6 9.73-.82l109.85 53.82-52.97 76.59ZM107.84 282.66l48.43 48.43c2.21 2.21 5.8 2.21 8.02 0l17.86-17.86a5.658 5.658 0 0 0 1.28-6.04l-24.29-63.2-51.3 38.67ZM201.19 189.3l90.59 90.59c4.14 4.14 10.08 4.91 13.27 1.73l25.72-25.72c2.28-2.28 2.6-6.09.82-9.73l-53.82-109.85-76.59 52.97Z"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="m82.96 257.78 24.87 24.87 166.72-125.69c67.04-52.14 61.09-103 53.44-125.94a28.875 28.875 0 0 0-18.28-18.28c-22.94-7.64-73.8-13.6-125.94 53.44L58.09 232.91l24.87 24.87Z"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="m140.4 200.35-28.35 28.34"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M254.1 53.3c5.11-5.11 16.44-2.08 25.3 6.78s11.89 20.18 6.78 25.3"
+                          class="draw_line_2"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>03.</strong> 연차 자율 사용
+                      </h3>
+                      <p class="txt sub">
+                        연차 사유 묻지않습니다. <br />필요할 때 자유롭게
+                        사용하세요.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic hoodie">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        image-rendering="optimizeQuality"
+                        shape-rendering="geometricPrecision"
+                        text-rendering="geometricPrecision"
+                        viewBox="0 0 371.58 373.69"
+                      >
+                        <title>후드티</title>
+                        <path
+                          d="M8.19 255.96 8 273.67c-.1 9.37 5.68 17.8 14.47 21.08l38.74 14.46M285.1 24.82 182.94 88.15 80.28 26l23.36-18h161.3l20.16 16.82h0zM39.08 267.3 8.19 255.96 9.51 85.42c.07-8.79 5.3-16.71 13.36-20.22l71.02-30.95M310.37 309.21l38.74-14.46a22.257 22.257 0 0 0 14.47-21.08l-.19-17.71M277.7 34.24l71.02 30.95a22.25 22.25 0 0 1 13.36 20.22l1.32 170.54-30.89 11.34M139.75 148.05l-.01-77.75M227.95 146.09l-.01-77.75M126.15 233.71h111.36l24.48 61.77H107.5l18.65-61.77h0z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="m114.21 8 68.71 40.07L254.37 8M309.62 116.73v192.45c0 12.29-9.96 22.25-22.25 22.25H83.46c-12.29 0-22.25-9.96-22.25-22.25V116.73M301.24 331.43v12.01c0 12.29-9.96 22.25-22.25 22.25H92.59c-12.29 0-22.25-9.96-22.25-22.25v-12.01"
+                          class="draw_line_1"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>04.</strong> 자율복장
+                      </h3>
+                      <p class="txt sub">
+                        복장하나로 달라지는 업무 효율! <br />입고 싶은 옷 입고
+                        편하게 출근하세요.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic gift">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 414.06 363.34"
+                      >
+                        <title>선물상자</title>
+                        <path
+                          d="M39.62 355.34c-6.53 0-11.84-5.31-11.84-11.84V166.93h358.51V343.5c0 6.53-5.31 11.84-11.84 11.84H39.62Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M378.28 174.93V343.5c0 2.12-1.72 3.84-3.84 3.84H39.62c-2.12 0-3.84-1.72-3.84-3.84V174.93h342.51m16-16H19.78V343.5c0 10.96 8.88 19.84 19.84 19.84h334.82c10.96 0 19.84-8.88 19.84-19.84V158.93Z"
+                          class="draw_line_2"
+                        />
+                        <rect
+                          width="398.06"
+                          height="90.26"
+                          x="8"
+                          y="83.21"
+                          class="draw_line_1"
+                          rx="11.84"
+                          ry="11.84"
+                        />
+                        <path
+                          d="M394.22 91.21c2.12 0 3.84 1.72 3.84 3.84v66.57c0 2.12-1.72 3.84-3.84 3.84H19.84c-2.12 0-3.84-1.72-3.84-3.84V95.05c0-2.12 1.72-3.84 3.84-3.84h374.38m0-16H19.84C8.88 75.21 0 84.09 0 95.05v66.57c0 10.96 8.88 19.84 19.84 19.84h374.38c10.96 0 19.84-8.88 19.84-19.84V95.05c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="M135.5 144.98s13.74-11.82 27.11-32.36c10.01-15.39 23.29-28.68 44.42-28.68"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M125.29 16c9.67 0 21.84 6.56 34.27 18.46 10.29 9.87 19.51 21.99 26.76 34.97-17.86-2.23-33.72-5.68-46.71-10.22-17.52-6.21-28.7-16.93-29.15-27.95-.24-6.11 2.88-11.55 7.95-13.88 2.11-.94 4.29-1.38 6.88-1.38m0-16c-4.88 0-9.28.92-13.48 2.81-11.03 5.02-17.83 16.44-17.34 29.08.75 17.99 15.64 33.85 39.83 42.41 20.54 7.18 47.41 11.82 77.73 13.43-8.19-23.83-23.26-47.42-41.4-64.82C154.98 7.92 139.3 0 125.29 0Z"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="M278.56 144.98s-13.74-11.82-27.11-32.36c-10.01-15.39-23.29-28.68-44.42-28.68"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M288.77 16c2.58 0 4.77.44 6.88 1.38 5.07 2.32 8.19 7.77 7.95 13.84-.46 11.05-11.63 21.77-29.15 27.98-12.99 4.54-28.85 7.99-46.71 10.22 7.25-12.98 16.46-25.09 26.75-34.96 12.44-11.91 24.61-18.47 34.28-18.47m0-16c-14.01 0-29.69 7.92-45.35 22.91-18.14 17.4-33.2 40.99-41.4 64.82 30.32-1.6 57.18-6.24 77.73-13.43 24.2-8.56 39.09-24.42 39.83-42.41.5-12.64-6.31-24.06-17.34-29.08-4.19-1.89-8.6-2.81-13.48-2.81Z"
+                          class="draw_line_2"
+                        />
+                        <path d="M207.03 87.73v265.23" class="draw_line_3" />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>05.</strong> 명절선물 지급
+                      </h3>
+                      <p class="txt sub">
+                        풍성한 명절 연휴를 위해 <br />매년 명절선물을
+                        지급합니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic letter">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 358.44 254.15"
+                      >
+                        <title>편지봉투</title>
+                        <path
+                          d="M338.6 16c2.12 0 3.84 1.72 3.84 3.84v214.47c0 2.12-1.72 3.84-3.84 3.84H19.84c-2.12 0-3.84-1.72-3.84-3.84V19.84c0-2.12 1.72-3.84 3.84-3.84h318.75m0-16H19.84C8.88 0 0 8.88 0 19.84v214.47c0 10.96 8.88 19.84 19.84 19.84h318.75c10.96 0 19.84-8.88 19.84-19.84V19.84C358.43 8.88 349.55 0 338.59 0Z"
+                          style="fill: #191919"
+                        />
+                        <path
+                          d="M140.23 117.82 9.19 239.21M349.25 239.21 218.21 117.82M9.19 30.9l146.63 97.18c14.18 9.4 32.62 9.4 46.8 0L349.25 30.9"
+                          class="draw_line_1"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>06.</strong> 경조비, 경조휴가 지원
+                      </h3>
+                      <p class="txt sub">
+                        구성원의 기쁨과 슬픔을 함께 하기 위해<br />각종 경조비,
+                        경조휴가를 지원합니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic cake">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 420.19 466.28"
+                      >
+                        <title>케이크</title>
+                        <path
+                          d="M203.47 75.06h13.25c6.54 0 11.84 5.31 11.84 11.84v153.37c0 6.54-5.31 11.84-11.84 11.84h-13.25c-6.54 0-11.84-5.31-11.84-11.84V86.9c0-6.54 5.31-11.84 11.84-11.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M216.72 83.06c2.12 0 3.84 1.72 3.84 3.84v153.37c0 2.12-1.72 3.84-3.84 3.84h-13.25c-2.12 0-3.84-1.72-3.84-3.84V86.9c0-2.12 1.72-3.84 3.84-3.84h13.25m0-16h-13.25c-10.96 0-19.84 8.88-19.84 19.84v153.37c0 10.96 8.88 19.84 19.84 19.84h13.25c10.96 0 19.84-8.88 19.84-19.84V86.9c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M104.38 164.68h211.44c6.54 0 11.84 5.31 11.84 11.84v153.37c0 6.54-5.31 11.84-11.84 11.84H104.38c-6.54 0-11.84-5.31-11.84-11.84V176.52c0-6.54 5.31-11.84 11.84-11.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M315.82 172.68c2.12 0 3.84 1.72 3.84 3.84v153.37c0 2.12-1.72 3.84-3.84 3.84H104.38c-2.12 0-3.84-1.72-3.84-3.84V176.52c0-2.12 1.72-3.84 3.84-3.84h211.44m0-16H104.38c-10.96 0-19.84 8.88-19.84 19.84v153.37c0 10.96 8.88 19.84 19.84 19.84h211.44c10.96 0 19.84-8.88 19.84-19.84V176.52c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M74.17 215.16h271.85c6.54 0 11.84 5.31 11.84 11.84v153.37c0 6.54-5.31 11.84-11.84 11.84H74.17c-6.54 0-11.84-5.31-11.84-11.84V227c0-6.54 5.31-11.84 11.84-11.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M346.02 223.16c2.12 0 3.84 1.72 3.84 3.84v153.37c0 2.12-1.72 3.84-3.84 3.84H74.17c-2.12 0-3.84-1.72-3.84-3.84V227c0-2.12 1.72-3.84 3.84-3.84h271.85m0-16H74.17c-10.96 0-19.84 8.88-19.84 19.84v153.37c0 10.96 8.88 19.84 19.84 19.84h271.85c10.96 0 19.84-8.88 19.84-19.84V227c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M47.44 281.23h325.31c6.54 0 11.84 5.31 11.84 11.84v153.37c0 6.54-5.31 11.84-11.84 11.84H47.44c-6.54 0-11.84-5.31-11.84-11.84V293.07c0-6.54 5.31-11.84 11.84-11.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M372.75 289.23c2.12 0 3.84 1.72 3.84 3.84v153.37c0 2.12-1.72 3.84-3.84 3.84H47.45c-2.12 0-3.84-1.72-3.84-3.84V293.07c0-2.12 1.72-3.84 3.84-3.84h325.3m0-16H47.45c-10.96 0-19.84 8.88-19.84 19.84v153.37c0 10.96 8.88 19.84 19.84 19.84h325.3c10.96 0 19.84-8.88 19.84-19.84V293.07c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M19.84 427.44h380.51c6.54 0 11.84 5.31 11.84 11.84v7.15c0 6.54-5.31 11.84-11.84 11.84H19.84C13.3 458.27 8 452.96 8 446.43v-7.15c0-6.54 5.31-11.84 11.84-11.84Z"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M400.35 435.44c2.12 0 3.84 1.72 3.84 3.84v7.15c0 2.12-1.72 3.84-3.84 3.84H19.84c-2.12 0-3.84-1.72-3.84-3.84v-7.15c0-2.12 1.72-3.84 3.84-3.84h380.51m0-16H19.84C8.88 419.44 0 428.32 0 439.28v7.15c0 10.96 8.88 19.84 19.84 19.84h380.51c10.96 0 19.84-8.88 19.84-19.84v-7.15c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path d="M63.62 248.31h292.95" class="draw_line_2" />
+                        <path
+                          d="M38.79 325.8c21.41 0 21.41 23.98 42.82 23.98s21.41-23.98 42.82-23.98 21.41 23.98 42.82 23.98 21.41-23.98 42.83-23.98 21.41 23.98 42.83 23.98 21.41-23.98 42.83-23.98 21.42 23.98 42.83 23.98 21.42-23.98 42.83-23.98"
+                          class="draw_line_1"
+                        />
+                        <path
+                          d="M38.79 325.8c21.41 0 21.41 23.98 42.82 23.98s21.41-23.98 42.82-23.98 21.41 23.98 42.82 23.98 21.41-23.98 42.83-23.98 21.41 23.98 42.83 23.98 21.41-23.98 42.83-23.98 21.42 23.98 42.83 23.98 21.42-23.98 42.83-23.98"
+                          style="
+                            fill: none;
+                            stroke: #191919;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-width: 16px;
+                          "
+                        />
+                        <path
+                          d="M226.83 36.15c0 9.24-7.49 16.74-16.74 16.74s-16.74-7.49-16.74-16.74S200.84 8 210.09 8s16.74 18.91 16.74 28.15Z"
+                          class="draw_line_2"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>07.</strong> 생일케이크 제공
+                      </h3>
+                      <p class="txt sub">
+                        행복한 생일을 보내기를 바라며 <br />생일자에게 맛있는
+                        생일케이크를 제공합니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="culture_item" data-gsap="fade-up">
+                    <figure class="draw_ic coffee">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60px"
+                        viewBox="0 0 296.53 323.25"
+                      >
+                        <title>컵</title>
+                        <path
+                          d="M228.61 100.16c2.12 0 3.84 1.72 3.84 3.84v135.17c0 16.19-13.17 29.35-29.35 29.35H93.44c-16.19 0-29.35-13.17-29.35-29.35V104c0-2.12 1.72-3.84 3.84-3.84h160.68m0-16H67.92c-10.96 0-19.84 8.88-19.84 19.84v135.17c0 25.05 20.31 45.35 45.35 45.35h109.66c25.05 0 45.35-20.31 45.35-45.35V104c0-10.96-8.88-19.84-19.84-19.84Z"
+                          class="draw_line_3"
+                        />
+                        <path
+                          d="M8 315.25h280.53M48.08 213.89C25.94 213.89 8 195.95 8 173.81s17.94-40.08 40.08-40.08M113.89 93.47v31.76"
+                          class="draw_line_2"
+                        />
+                        <path
+                          d="M135.45 184.35H92.33v-47.92l21.56-11.2 21.56 11.2v47.92zM112.17 8s-7.69 3.65-7.1 14.81c.45 8.52 4.58 8.29 9.53 18.45 5.54 11.37-1.48 19.9-6.64 23.33M149.6 8s-7.69 3.65-7.1 14.81c.45 8.52 4.58 8.29 9.53 18.45 5.54 11.37-1.48 19.9-6.64 23.33M187.04 8s-7.69 3.65-7.1 14.81c.45 8.52 4.58 8.29 9.53 18.45 5.54 11.37-1.48 19.9-6.64 23.33"
+                          class="draw_line_1"
+                        />
+                      </svg>
+                    </figure>
+                    <div class="culture_item_content">
+                      <h3 class="fs-txt-3 boldEx">
+                        <strong>08.</strong> 커피/차 무한 제공
+                      </h3>
+                      <p class="txt sub">
+                        맛있는 에스프레소를 먹을 수 있는 <br />커피 머신부터
+                        다양한 차들이 구비되어 있습니다.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <!-- //기업문화 영역 -->
+            <!-- 채용 영역 -->
+            <section class="section recruit">
+              <div class="wrap">
+                <div class="section_title">
+                  <div class="emoji_wrap">
+                    <div class="emoji_heart">
+                      <img
+                        data-gsap="flip-right"
+                        data-gsap-delay="300"
+                        src="/images/recruit_icon_heart.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="emoji_hand">
+                      <img
+                        data-gsap="fade-right"
+                        src="/images/recruit_icon_hand.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <h2 class="fs-title-1s" data-gsap="fade-up">
+                    인재의 가치를
+                    <strong class="boldEx">소중히 여기는</strong> 디자인210에서
+                    <br />
+                    <strong class="boldEx">지혜와 열정을 품은</strong> 당신을
+                    기다립니다.
+                  </h2>
+                </div>
+                <!-- <div class="recruit_info" data-gsap="fade-up">
+                            <h2 class="fs-txt-5 boldEx">채용절차</h2>
+                            <ul class="recruit_step">
+                                <li class="step_01" data-gsap="fade-right">
+                                    <span class="fs-txt-3 boldEx"><strong>01.</strong> 입사지원</span>
+                                </li>
+                                <li class="step_02" data-gsap="fade-right" data-gsap-delay="150">
+                                    <span class="fs-txt-3 boldEx"><strong>02.</strong> 서류전형</span>
+                                </li>
+                                <li class="step_03" data-gsap="fade-right" data-gsap-delay="300">
+                                    <span class="fs-txt-3 boldEx"><strong>03.</strong> 면접전형</span>
+                                </li>
+                                <li class="step_04" data-gsap="fade-right" data-gsap-delay="450">
+                                    <span class="fs-txt-3 boldEx"><strong>04.</strong> 최종입사</span>
+                                </li>
+                            </ul>
+                            <div class="recruit_desc">
+                                <p class="fs-txt-0 sub">상시 채용으로 채용시 마감되며, 당사 상황에 따라 채용절차는 변경될 수 있습니다.</p>
+                                <p class="fs-txt-0 sub">입사지원은 채용공고에 명시되어 있는 <a class="bold" href="mailto:210plan@design210.com?Subject=지원부문_이력서_지원자명">210plan@design210.com</a> 으로 접수 가능합니다.</p>
+                            </div>
+                        </div> -->
+                <div class="recruit_board" data-gsap="fade-up">
+                  <h2 class="fs-txt-5 boldEx">채용공고</h2>
+                  <ul class="recruit_board_list" data-gsap="fade-up">
+                    <li id="design" class="recruit_board_article">
+                      <div class="title_wrap">
+                        <strong class="fs-txt-5">디자인연구소</strong>
+                        <span class="fs-txt-4">폰트디자이너</span>
+                      </div>
+                      <div class="parts" style="display: none">
+                        <div class="part">
+                          <h4 class="fs-txt-3">[모집분야]</h4>
+                          <p>
+                            - 서체디자이너 (신입 / 경력 / 학력 / 전공 / 성별 /
+                            나이 무관)
+                          </p>
+                          <p>
+                            - 서체 개발, Typeface를 통한 컨텐츠 기획 및 제작
+                            (해보고 싶은게 있다면 얘기해 주세요.)
+                          </p>
+                          <p>
+                            - 정규직 (협의에 따라 수습기간 있을 수 있어요. /
+                            4대보험, 퇴직연금 등 취업규칙을 준수하고 보장해요.)
+                          </p>
+                          <p>- 연봉 등 근로 조건은 면접 후 최종 협의</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[근무환경]</h4>
+                          <p>- 급여 : 회사 내규에 따름 (면접 후 결정)</p>
+                          <p>
+                            - 근무시간 : 9시 00분 ~ 18시 00분 / 9시 30분 ~ 18시
+                            30분 中 택 1
+                          </p>
+                          <p>- 근무요일 : 주 4일 근무 (월~금 선택 1일 휴무)</p>
+                          <p>- 근무지 : 서울 > 성동구</p>
+                          <p>- 근무형태 : 정규직 (수습_협의)</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[우대사항]</h4>
+                          <p>- 폰트와 그래픽 디자인 이해도에 관하여</p>
+                          <p>- 팀원간 원활한 커뮤니케이션이 가능한지</p>
+                          <p>
+                            - 동종 업계 출신 또는 유경험자로써의 노하우 소유자
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[제출서류]</h4>
+                          <p>
+                            - 이력서, 자기소개서 (정해진 양식은 없어요, 당신의
+                            지난 이야기와 앞으로의 미래에 대한 생각을 나눌 수
+                            있길 바래요.)
+                          </p>
+                          <p>
+                            - 포트폴리오 (정해진 양식은 없어요, 당신의 작품을
+                            충분히 감상할 수 있었으면 좋겠어요.)
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원기간]</h4>
+                          <p>상시 채용으로 채용시 마감</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원방법]</h4>
+                          <p>
+                            - 지원서는
+                            <a
+                              href="mailto:210plan@design210.com?Subject=지원부문_이력서_지원자명"
+                              >210plan@design210.com</a
+                            >
+                            으로 보내주세요.
+                          </p>
+                          <p>
+                            - 제출 서류의 파일명 규칙을 지켜주세요. [규칙 :
+                            지원부문_이력서_지원자명 /
+                            지원부문_포트폴리오_지원자명]
+                          </p>
+                          <p>&#40;예시&#41; 서체디자이너_이력서_김미래​​</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li id="business" class="recruit_board_article">
+                      <div class="title_wrap">
+                        <strong class="fs-txt-5">비즈니스사업부</strong>
+                        <span class="fs-txt-4">영업기획 / 법인영업자</span>
+                      </div>
+                      <div class="parts" style="display: none">
+                        <div class="part">
+                          <h4 class="fs-txt-3">[모집분야]</h4>
+                          <p>
+                            - 서체디자이너 (신입 / 경력 / 학력 / 전공 / 성별 /
+                            나이 무관)
+                          </p>
+                          <p>
+                            - 서체 개발, Typeface를 통한 컨텐츠 기획 및 제작
+                            (해보고 싶은게 있다면 얘기해 주세요.)
+                          </p>
+                          <p>
+                            - 정규직 (협의에 따라 수습기간 있을 수 있어요. /
+                            4대보험, 퇴직연금 등 취업규칙을 준수하고 보장해요.)
+                          </p>
+                          <p>- 연봉 등 근로 조건은 면접 후 최종 협의</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[근무환경]</h4>
+                          <p>- 급여 : 회사 내규에 따름 (면접 후 결정)</p>
+                          <p>
+                            - 근무시간 : 9시 00분 ~ 18시 00분 / 9시 30분 ~ 18시
+                            30분 中 택 1
+                          </p>
+                          <p>- 근무요일 : 주 4일 근무 (월~금 선택 1일 휴무)</p>
+                          <p>- 근무지 : 서울 > 성동구</p>
+                          <p>- 근무형태 : 정규직 (수습_협의)</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[우대사항]</h4>
+                          <p>- 폰트와 그래픽 디자인 이해도에 관하여</p>
+                          <p>- 팀원간 원활한 커뮤니케이션이 가능한지</p>
+                          <p>
+                            - 동종 업계 출신 또는 유경험자로써의 노하우 소유자
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[제출서류]</h4>
+                          <p>
+                            - 이력서, 자기소개서 (정해진 양식은 없어요, 당신의
+                            지난 이야기와 앞으로의 미래에 대한 생각을 나눌 수
+                            있길 바래요.)
+                          </p>
+                          <p>
+                            - 포트폴리오 (정해진 양식은 없어요, 당신의 작품을
+                            충분히 감상할 수 있었으면 좋겠어요.)
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원기간]</h4>
+                          <p>상시 채용으로 채용시 마감</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원방법]</h4>
+                          <p>
+                            - 지원서는
+                            <a
+                              href="mailto:210plan@design210.com?Subject=지원부문_이력서_지원자명"
+                              >210plan@design210.com</a
+                            >
+                            으로 보내주세요.
+                          </p>
+                          <p>
+                            - 제출 서류의 파일명 규칙을 지켜주세요. [규칙 :
+                            지원부문_이력서_지원자명 /
+                            지원부문_포트폴리오_지원자명]
+                          </p>
+                          <p>&#40;예시&#41; 서체디자이너_이력서_김미래​​</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li id="skill" class="recruit_board_article">
+                      <div class="title_wrap">
+                        <strong class="fs-txt-5">전략기술연구소</strong>
+                        <span class="fs-txt-4">개발자</span>
+                      </div>
+                      <div class="parts" style="display: none">
+                        <div class="part">
+                          <h4 class="fs-txt-3">[모집분야]</h4>
+                          <p>
+                            - 서체디자이너 (신입 / 경력 / 학력 / 전공 / 성별 /
+                            나이 무관)
+                          </p>
+                          <p>
+                            - 서체 개발, Typeface를 통한 컨텐츠 기획 및 제작
+                            (해보고 싶은게 있다면 얘기해 주세요.)
+                          </p>
+                          <p>
+                            - 정규직 (협의에 따라 수습기간 있을 수 있어요. /
+                            4대보험, 퇴직연금 등 취업규칙을 준수하고 보장해요.)
+                          </p>
+                          <p>- 연봉 등 근로 조건은 면접 후 최종 협의</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[근무환경]</h4>
+                          <p>- 급여 : 회사 내규에 따름 (면접 후 결정)</p>
+                          <p>
+                            - 근무시간 : 9시 00분 ~ 18시 00분 / 9시 30분 ~ 18시
+                            30분 中 택 1
+                          </p>
+                          <p>- 근무요일 : 주 4일 근무 (월~금 선택 1일 휴무)</p>
+                          <p>- 근무지 : 서울 > 성동구</p>
+                          <p>- 근무형태 : 정규직 (수습_협의)</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[우대사항]</h4>
+                          <p>- 폰트와 그래픽 디자인 이해도에 관하여</p>
+                          <p>- 팀원간 원활한 커뮤니케이션이 가능한지</p>
+                          <p>
+                            - 동종 업계 출신 또는 유경험자로써의 노하우 소유자
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[제출서류]</h4>
+                          <p>
+                            - 이력서, 자기소개서 (정해진 양식은 없어요, 당신의
+                            지난 이야기와 앞으로의 미래에 대한 생각을 나눌 수
+                            있길 바래요.)
+                          </p>
+                          <p>
+                            - 포트폴리오 (정해진 양식은 없어요, 당신의 작품을
+                            충분히 감상할 수 있었으면 좋겠어요.)
+                          </p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원기간]</h4>
+                          <p>상시 채용으로 채용시 마감</p>
+                        </div>
+                        <div class="part">
+                          <h4 class="fs-txt-3">[지원방법]</h4>
+                          <p>
+                            - 지원서는
+                            <a
+                              href="mailto:210plan@design210.com?Subject=지원부문_이력서_지원자명"
+                              >210plan@design210.com</a
+                            >
+                            으로 보내주세요.
+                          </p>
+                          <p>
+                            - 제출 서류의 파일명 규칙을 지켜주세요. [규칙 :
+                            지원부문_이력서_지원자명 /
+                            지원부문_포트폴리오_지원자명]
+                          </p>
+                          <p>&#40;예시&#41; 서체디자이너_이력서_김미래​​</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="recruit_email" data-gsap="fade-up">
+                  <a
+                    href="mailto:210plan@design210.com?Subject=지원부문_이력서_지원자명"
+                    >210plan@design210.com</a
+                  >
+                </div>
+              </div>
+            </section>
+            <!-- //채용 영역 -->
+          </div>
+          <!-- //article_body -->
+        </div>
+        <!-- //본문 끝 contents -->
+      </div>
+      <!-- //page - recruit -->
+
+      <!-- interactive -->
+      <div class="interactive">
+        <div class="interactive_inner">
+          <div class="wrap">
+            <h2 class="fs-txt-4">
+              <p class="boldEx">210에서 폰트로</p>
+              <p class="boldEx">하고싶은 이야기가 있나요?</p>
+            </h2>
+            <div class="buttons flex">
+              <a href="./project_info.html" class="button_ic big bgBlack">
+                <span>브랜드 전용서체</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+              <a href="./contact.html" class="button_ic big bgBlack">
+                <span>폰트 제휴 · 개발문의</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 퀵메뉴 -->
+        <div class="quickmenu_wrap">
+          <a href="/" class="quickmenu_control">
+            <i class="quickmenu_control_logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 266.65 208.06"
+              >
+                <path
+                  d="M191.83 0h74.82v169.8h-74.82V0Zm0 184.14h74.82v23.91h-74.82v-23.91ZM75.28 60.57V23.95h24.97v78.35H25.32L0 126.25v43.8h74.93V126.6h74.93l25.33-23.95V32.16L141.31 0H27.37L.35 25.32v35.25h74.93zM0 184.11h175.19v23.95H0z"
+                />
+              </svg>
+            </i>
+            <div class="quickmenu_control_hover">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                viewBox="0 0 320.591 320.591"
+              >
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                />
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                />
+              </svg>
+            </div>
+          </a>
+          <div class="quickmenu">
+            <div class="quickmenu_inner">
+              <ul class="quickmenu_list">
+                <li class="quickmenu_item">
+                  <a href="/" target="_blank">
+                    <span>210SHOP 바로가기</span>
+                    <i class="ic_shop point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="./contact.html">
+                    <span>폰트 제휴 · 개발문의</span>
+                    <i class="ic_document point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="#top">
+                    <span>맨위로가기</span>
+                    <i class="ic_arrow_top white"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//interactive -->
+      <!-- footer -->
+      <footer id="footer" data-include="./global/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+
+    <!-- JS injected by webpack -->
+  </body>
+</html>

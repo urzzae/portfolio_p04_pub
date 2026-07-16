@@ -1,0 +1,43 @@
+@use "../helpers" as *;
+
+// ** section
+
+.section {
+  &_title {
+    .wrap {
+      @include flex-flexbox;
+      @include flex-justify(between);
+      @include flex-align(end);
+
+      &.center {
+        @include flex-justify(center);
+      }
+      &.col {
+        @include flex-align(start);
+        @include flex-direction(col);
+      }
+      p {
+        line-height: 1.8;
+        padding-top: 8px;
+      }
+    }
+  }
+}
+
+// 타이틀 하단 여백
+#page {
+  &:not(.main) {
+    .section {
+      &_title {
+        padding-bottom: 35px;
+      }
+    }
+  }
+  &.main {
+    .section {
+      &_title {
+        padding-bottom: clamp(50px, 8.4vw, 125px);
+      }
+    }
+  }
+}

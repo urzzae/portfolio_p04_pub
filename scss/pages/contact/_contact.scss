@@ -1,0 +1,93 @@
+@use "../../helpers" as *;
+
+// ** contact.scss
+
+.contact {
+  .buttons {
+    padding: {
+      top: 0;
+      bottom: 25px;
+    }
+    @include flex-justify(end);
+  }
+  &_forms {
+    @include flex-flexbox;
+    @include flex-wrap(y);
+    border-top: 2px solid $colorDef;
+    padding: {
+      top: 65px;
+      bottom: 65px;
+    }
+    h3 {
+      strong {
+        font-family: $fontBoldEx;
+        font-weight: normal;
+      }
+    }
+    @include mq-lapSmall {
+      @include flex-direction(col);
+    }
+  }
+  &_form {
+    &_header {
+      h3 {
+        font-family: $fontBoldEx;
+        font-weight: normal;
+      }
+      .required_text {
+        color: $colorPo01;
+        line-height: 1.8;
+      }
+      &:first-child {
+        padding-bottom: 10px;
+      }
+      &:not(:first-child) {
+        padding-bottom: 20px;
+      }
+    }
+    &_content {
+      &:not(:last-child) {
+        padding-bottom: 65px;
+        @include mq-lapSmall {
+          padding-bottom: 15px;
+        }
+      }
+    }
+    //정보입력칸
+    &.information {
+      width: 600px;
+      padding-right: 100px;
+      @include mq-lapSmall {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    //내용칸
+    &.comment {
+      @include flex-flexbox;
+      @include flex-direction(col);
+      @include flex-justify(between);
+      width: calc(100% - 600px);
+      @include mq-lapSmall {
+        width: 100%;
+        padding-top: 15px;
+      }
+    }
+    //컨트롤
+    &_submit {
+      @include flex-flexbox;
+      @include flex-direction(col);
+      @include flex-align(end);
+      .buttons {
+        padding-top: 10px;
+      }
+    }
+    .input_wrap {
+      &.error {
+        .not_valid_tip {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

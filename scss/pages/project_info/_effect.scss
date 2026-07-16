@@ -1,0 +1,143 @@
+@use "../../helpers" as *;
+
+// ** project_info_effect.scss
+
+.project_info {
+  &_effect {
+    width: 100%;
+    padding-bottom: clamp(125px, 12.5vw, 185px);
+    .section_title {
+      padding-bottom: 0 !important;
+      h2 {
+        line-height: 1.8;
+      }
+    }
+    > .wrap {
+      padding-top: clamp(65px, 12.5vw, 185px);
+    }
+    &_list {
+      @include flex-flexbox;
+      width: 100%;
+      @include mq-lapSmall {
+        @include flex-direction(col);
+      }
+    }
+    &_item {
+      @include flex-flexbox;
+      @include flex-justify(between);
+      @include flex-direction(colReverse);
+      @include flex-align(center);
+      width: 100%;
+      column-gap: 35px;
+      figure {
+        text-align: center;
+        img {
+          max-width: 100%;
+        }
+      }
+      &_txt {
+        padding: {
+          top: 35px;
+          bottom: 65px;
+        }
+        h3 {
+          position: relative;
+          @include flex-flexbox;
+          @include flex-direction(col);
+          padding-bottom: 35px;
+          strong {
+            position: relative;
+            &::before {
+              position: absolute;
+              top: -25px;
+              left: 0;
+              font-size: $fsDef;
+            }
+          }
+          &::before {
+            @include mixin-absolute;
+            top: -25px;
+            left: -4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $colorPo01;
+          }
+        }
+        p {
+          line-height: 1.8;
+          @include mq-mobile {
+            word-break: keep-all;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+      &:not(:last-child) {
+        padding-right: 15px;
+        @include mq-lapSmall {
+          padding-right: 0;
+          padding-bottom: 35px;
+        }
+      }
+      @include mq-lapSmall {
+        @include flex-direction(rowReverse);
+      }
+      @include mq-tablet {
+        @include flex-direction(colReverse);
+        @include flex-align(start);
+        figure {
+          margin: {
+            left: auto;
+            right: auto;
+          }
+        }
+      }
+      &:nth-child(odd) {
+        @include mq-lapSmall {
+          @include flex-direction(row);
+        }
+        @include mq-tablet {
+          @include flex-direction(colReverse);
+        }
+      }
+      &:nth-child(1) {
+        figure {
+          width: 250px;
+        }
+        h3 {
+          strong {
+            &::before {
+              content: "01";
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        figure {
+          width: 280px;
+        }
+        h3 {
+          strong {
+            &::before {
+              content: "02";
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        figure {
+          width: 300px;
+        }
+        h3 {
+          strong {
+            &::before {
+              content: "03";
+            }
+          }
+        }
+      }
+    }
+  }
+}

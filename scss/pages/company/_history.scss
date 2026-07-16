@@ -1,0 +1,268 @@
+@use "../../helpers" as *;
+
+// ** company_history.scss
+
+.company {
+  &_history {
+    .wrap {
+      position: relative;
+      > ul {
+        > li {
+          @include flex-flexbox;
+          @include flex-justify(center);
+          @include mq-tablet {
+            @include flex-direction(col);
+          }
+        }
+      }
+    }
+    &_list {
+      margin-top: 85px;
+      @include mq-lapSmall {
+        margin-top: 15px;
+      }
+      > li {
+        pointer-events: none;
+        //.history_item
+        &:not(:last-child) {
+          padding-bottom: 125px;
+        }
+        &.is-hidden {
+          opacity: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+        }
+        .year {
+          //연도표시
+          width: 50%;
+          position: relative;
+          @include mq-tablet {
+            width: 100%;
+          }
+          span {
+            position: relative;
+            width: 100%;
+            font-size: 82px;
+            font-family: $fontBold;
+            line-height: 1;
+            color: $colorBgGray;
+            transition: color 0.15s linear;
+            @include mq-lapSmall {
+              font-size: 62px;
+            }
+            &::before {
+              @include mixin-absolute {
+                top: 25px;
+              }
+              width: 8px;
+              height: 8px;
+              background-color: $colorLineGray;
+              border-radius: 50%;
+            }
+            &::after {
+              @include mixin-absolute {
+                top: 14px;
+              }
+              width: 30px;
+              height: 30px;
+              background-color: rgba(255, 89, 46, 0.25);
+              border-radius: 50%;
+              @include mixin-scale(0);
+              transition: transform 0.25s ease-in-out;
+            }
+          }
+        }
+        > ul {
+          //연혁 보여주는 리스트
+          padding-top: 25px;
+          width: 50%;
+          @include mq-tablet {
+            width: 100%;
+          }
+          > li {
+            position: relative;
+            padding: 8px 0;
+            opacity: 0;
+            @include mixin-transform(translate3d(0, 100px, 0));
+            transition: opacity 0.45s, transform 0.45s;
+            span {
+              font-size: $fsDef;
+              line-height: 1.8;
+              word-break: break-all;
+            }
+            &.link {
+              @include flex-flexbox;
+              @include flex-align(center);
+              span {
+                padding-right: 5px;
+              }
+              .arrow_link {
+                fill: $colorGray;
+                &:hover {
+                  fill: $colorPo01;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(odd) {
+          > ul {
+            padding-left: 85px;
+            @include mq-lapSmall {
+              padding-left: 35px;
+            }
+            > li {
+              &::before {
+                left: 0;
+              }
+            }
+          }
+          .year {
+            text-align: right;
+            width: 50%;
+            padding-right: 85px;
+            position: relative;
+            @include mq-lapSmall {
+              padding-right: 35px;
+            }
+            @include mq-tablet {
+              text-align: left;
+              padding-left: 35px;
+              padding-right: 0;
+            }
+            span {
+              &::before {
+                left: auto;
+                right: -90px;
+                @include mq-lapSmall {
+                  right: -40px;
+                }
+                @include mq-tablet {
+                  left: -38px;
+                  right: unset;
+                }
+              }
+              &::after {
+                left: auto;
+                right: -101px;
+                @include mq-lapSmall {
+                  right: -51px;
+                }
+                @include mq-tablet {
+                  left: -49px;
+                  right: unset;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(even) {
+          @include flex-direction(rowReverse);
+          > ul {
+            @include flex-flexbox;
+            @include flex-direction(col);
+            @include flex-align(end);
+            padding-right: 85px;
+            @include mq-lapSmall {
+              padding-right: 35px;
+            }
+            @include mq-tablet {
+              @include flex-align(start);
+              padding-right: 0;
+              padding-left: 35px;
+            }
+            > li {
+              &::before {
+                left: 0;
+              }
+              span {
+                text-align: right;
+                @include mq-tablet {
+                  text-align: left;
+                }
+              }
+            }
+          }
+          .year {
+            text-align: left;
+            padding-left: 85px;
+            @include mq-lapSmall {
+              padding-left: 35px;
+            }
+            span {
+              &::before {
+                left: -88px;
+                right: auto;
+                @include mq-lapSmall {
+                  left: -38px;
+                }
+              }
+              &::after {
+                left: -99px;
+                right: auto;
+                @include mq-lapSmall {
+                  left: -49px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 히스토리 포커스된 상태
+    .wrap {
+      > ul {
+        > li {
+          &.on {
+            ul {
+              li {
+                opacity: 1;
+                @include mixin-transform(translateZ(0));
+              }
+            }
+            .year {
+              span {
+                color: $colorPo01;
+                &::before {
+                  background-color: $colorPo01;
+                  transition: background-color 0.25s linear;
+                }
+                &::after {
+                  @include mixin-scale(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // timeline
+  .timeline {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    display: block;
+    background: $colorLineGray;
+    border-radius: 10px;
+    width: 2px;
+    height: calc(100% - 160px);
+    &_active {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      width: 2px;
+      height: 0;
+      max-height: calc(100% - 160px);
+      background-color: $colorPo01;
+      border-radius: 10px;
+      @include mq-tablet {
+        left: 0;
+      }
+    }
+    @include mq-tablet {
+      left: 0;
+    }
+  }
+}

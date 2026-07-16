@@ -1,0 +1,62 @@
+@use '../helpers' as *; 
+
+// ** cm_modal.scss
+// 공통 모달창
+
+.cm_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.65);
+    z-index: 9999;
+    @include flex-center;
+    &_inner {
+        width: min(660px, 92vw);
+        background: #fff;
+        padding: 25px;
+    }
+    // 큰 타이틀
+    &_title {
+        width: 100%;
+        font-size: $fsXLage;
+        font-family: $fontBold;
+        border-bottom: 2px solid $colorDef;
+        padding: {
+            bottom: 25px;
+            left: 10px;
+            right: 10px;
+        }
+    }
+    // 내용 박스
+    &_content {
+        padding: 25px 10px;
+        border-bottom: 2px solid $colorDef;
+        &_scroll {
+            max-height: 300px;
+            overflow-y: scroll;
+            // 스크롤바 설정
+            &::-webkit-scrollbar {
+                width: 13px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $colorDef;
+                // 스크롤바 설정 - 둥글게
+                border-radius: 10px; 
+                border: 3px solid #fff;
+            }
+            // 스크롤바 설정 - 뒷배경
+            &::-webkit-scrollbar-track {
+                background-color: #fff;
+            }
+        }
+    }
+    // 버튼 여백
+    .buttons {
+        padding-top: 25px;
+        .button, .button_ic {
+            border-radius: 0;
+        }
+    }
+}

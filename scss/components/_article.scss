@@ -1,0 +1,115 @@
+@use "../helpers" as *;
+
+// ** article.scss
+
+// article_body, article_footer
+#page {
+  height: auto !important;
+  .article {
+    height: auto !important;
+    &_body {
+      overflow: hidden;
+      height: auto !important;
+    }
+    &_footer {
+      @include flex-center;
+      @include flex-direction(col);
+      padding-bottom: clamp(65px, 9.1vw, 135px);
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+  .article_body {
+    padding-bottom: clamp(85px, 11.1vw, 165px);
+  }
+  &.careers,
+  &.service,
+  &.project_info {
+    .article_body {
+      padding-top: clamp(85px, 11.1vw, 165px);
+    }
+  }
+  &.main {
+    .article_body {
+      padding-top: clamp(120px, 17.9vw, 265px);
+    }
+  }
+}
+
+// article_header
+#page {
+  // 공통
+  .article {
+    &_header {
+      padding-top: clamp(100px, 14.5vw, 215px);
+      .wrap {
+        margin: 0 auto;
+        @include flex-flexbox;
+        @include flex-justify(center);
+        @include flex-direction(col);
+      }
+      h2 {
+        @include flex-flexbox;
+        @include flex-align(center);
+        @include flex-wrap(y);
+        img {
+          height: max(40px, 1.8em);
+          width: auto;
+          vertical-align: middle;
+        }
+      }
+      .sub {
+        padding-top: 25px;
+        line-height: 1.8;
+        color: $colorGray;
+        @include mq-mobile {
+          word-break: break-all;
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  // 개별
+  &.service,
+  &.careers,
+  &.project_info {
+    .article {
+      &_header {
+        padding-bottom: clamp(80px, 12.5vw, 185px);
+      }
+    }
+  }
+  &.company,
+  &.project {
+    .article {
+      &_header {
+        padding-bottom: clamp(35px, 11.1vw, 165px);
+      }
+    }
+  }
+  &.contact {
+    .article {
+      &_header {
+        padding-bottom: clamp(45px, 5.7vw, 85px);
+      }
+    }
+  }
+}
+// 타이틀에 들어가는 이모지
+.article {
+  &_header {
+    .emoji {
+      position: relative;
+      display: inline-block;
+      width: 95px;
+      margin: {
+        left: 15px;
+        right: 15px;
+        top: -10px;
+      }
+    }
+  }
+}

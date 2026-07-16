@@ -1,0 +1,576 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            if (!window.gsap) d.classList.remove("js");
+          }, 2000);
+        });
+      })();
+    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디자인210</title>
+    <link rel="stylesheet" type="text/css" href="/css/webfont.css" />
+    <!-- CSS injected by webpack -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- JS injected by webpack -->
+  </head>
+  <body>
+    <a href="#page" class="skip_nav">본문 바로가기</a>
+    <div class="wrapper">
+      <!-- header -->
+      <header id="header">
+        <div id="header_wrap">
+          <div class="header_container">
+            <div class="header_inner">
+              <h1 class="logo">
+                <a href="./index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1016.34 185.38"
+                  >
+                    <path
+                      d="M64.85 0h48.35v139.55H18.11L0 122.59v-62.1l18.11-16.96h32.08l14.66 11.69V0Zm0 59.58h-16.5v63.93h16.5V59.58ZM147.83 43.54h73.56l16.96 16.04v29.56l-16.96 16.04H173.5v18.33h61.41v16.04h-87.08l-22.69-21.54V65.08l22.69-21.54Zm25.67 16.04v29.56H190V59.58h-16.5ZM352.71 43.54v16.04h-52.25v23.83h53.85v34.6l-22.68 21.54h-81.35v-16.04h53.85V99.45h-53.85V65.08l22.69-21.54h79.75ZM416.44 31.85h-50.18V4.59h50.18v27.27Zm0 107.7h-50.18V43.54h50.18v96.01ZM430.67 168.42v-17.87h50.18v18.79h12.38v-29.79h-46.75l-18.1-16.96v-62.1l18.1-16.96h32.08l12.83 10.31 12.83-10.31h37.35v120.3l-22.68 21.54h-70.12l-18.1-16.96Zm46.06-44.91h16.5V59.58h-16.5v63.93ZM618.36 139.55V59.58h-16.5v79.97h-48.35V43.54h37.35l12.83 10.31 12.83-10.31h32.08l18.11 16.96v79.06h-48.35ZM827.53 0h50.18v113.89h-50.18V0Zm0 123.51h50.18v16.04h-50.18v-16.04ZM1016.34 21.54v96.47l-22.68 21.54h-74.7l-22.69-21.54V21.54L918.96 0h74.7l22.68 21.54Zm-50.18-5.5h-19.71v107.47h19.71V16.04ZM748.47 40.56V16.04h16.73v52.48h-50.18l-16.96 16.04v29.33h50.18v-29.1h50.18l16.96-16.04V21.54L792.69 0h-76.31l-18.1 16.96v23.6h50.18Zm-50.41 82.95v16.04h117.33v-16.04H698.06Z"
+                    />
+                  </svg>
+                </a>
+              </h1>
+              <nav class="menu menu_pc">
+                <ul class="menu_list menu_pc_list">
+                  <li class="menu_item menu_pc_item">
+                    <a href="./about.html">
+                      <span>디자인210</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./service.html">
+                      <span>사업분야</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./project.html" class="current">
+                      <span>프로젝트</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./contact.html">
+                      <span>문의하기</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile -->
+              <nav class="menu menu_mobile">
+                <div class="hamburger_toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="menu_mobile_collapes">
+                  <ul class="menu_list menu_mobile_list">
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./about.html">
+                        <span>디자인210</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./service.html">
+                        <span>사업분야</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./project.html" class="current">
+                        <span>프로젝트</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./contact.html">
+                        <span>문의하기</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- 외부링크 -->
+              <div class="link link_pc">
+                <ul class="link_list link_pc_list">
+                  <li class="link_item link_pc_item">
+                    <!-- 210쇼핑몰로 이동 -->
+                    <a href="http://www.design210.com/cloud" target="_blank">
+                      <i class="ic_shop black"></i>
+                      <span>210SHOP</span>
+                    </a>
+                  </li>
+                  <li class="link_item link_pc_item">
+                    <!-- 210블로그로 이동 -->
+                    <a href="https://blog.naver.com/design_210" target="_blank">
+                      <i class="ic_news black"></i>
+                      <span>210NEWS</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- page project -->
+      <div id="page" class="project">
+        <!-- article -->
+        <div class="article">
+          <!-- article_header -->
+          <div class="article_header">
+            <div class="wrap">
+              <div class="breadcrumb" data-gsap="fade-down">
+                <h3 class="fs-txt-0">포트폴리오</h3>
+              </div>
+              <div class="article_header_inner">
+                <h2
+                  class="fs-title-2"
+                  data-gsap="fade-up"
+                  data-gsap-delay="300"
+                >
+                  디자인210이 만드는&nbsp;<strong class="boldEx"
+                    >유니크한</strong
+                  ><img
+                    class="emoji"
+                    src="/images/intro_project.png"
+                    alt=""
+                    data-gsap="zoom-in"
+                    data-gsap-delay="350"
+                    data-gsap-ease="ease-out-back"
+                  />폰트 이야기
+                  <i class="emoji hand-heart"></i>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <!-- //article_header -->
+          <!-- article_body -->
+          <div class="article_body">
+            <!-- project_category -->
+            <div
+              class="project_category"
+              data-gsap="fade-up"
+              data-gsap-delay="500"
+            >
+              <div class="wrap">
+                <ul class="category_list">
+                  <li class="category_item active">
+                    <span>전체</span>
+                  </li>
+                  <li class="category_item">
+                    <span>기업</span>
+                  </li>
+                  <li class="category_item">
+                    <span>방송</span>
+                  </li>
+                  <li class="category_item">
+                    <span>관공서</span>
+                  </li>
+                  <li class="category_item">
+                    <span>IT/게임</span>
+                  </li>
+                  <li class="category_item">
+                    <span>콘텐츠</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //project_category -->
+            <!-- project_list -->
+            <div class="wrap" data-gsap="fade-up" data-gsap-delay="500">
+              <ul class="project_list">
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_01.png"
+                        alt="완주누리체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">완주군청</strong>
+                      <span>완주누리체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>관공서</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_02.png"
+                        alt="완주대둔산체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">완주군청</strong>
+                      <span>완주대둔산체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>관공서</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_04.png"
+                        alt="달라왕체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">달라스튜디오</strong>
+                      <span>달라왕체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>채널</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_05.png"
+                        alt="펀플로체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">펀플로</strong>
+                      <span>펀플로체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>IT/게임</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_06.png"
+                        alt="고우영체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">고우영화백</strong>
+                      <span>고우영체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>관공서</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_03.jpg"
+                        alt="SB어그로체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">샌드박스</strong>
+                      <span>SB어그로</span>
+                    </h3>
+                    <div class="cate">
+                      <span>콘텐츠</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_08.jpg"
+                        alt="교동체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">교동</strong>
+                      <span>교동체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>푸드</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_09.jpg"
+                        alt="신전떡볶이체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">신전</strong>
+                      <span>신전떡볶이체</span>
+                    </h3>
+                    <div class="cate">
+                      <span>푸드</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_10.jpg"
+                        alt="코코비체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">KIGLE</strong>
+                      <span>코코비</span>
+                    </h3>
+                    <div class="cate">
+                      <span>기업</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_11.jpg"
+                        alt="쿠키런체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">데브시스터즈</strong>
+                      <span>쿠키런</span>
+                    </h3>
+                    <div class="cate">
+                      <span>IT/게임</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_12.jpg"
+                        alt="땅스부대찌개체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">땅스부대찌개</strong>
+                      <span>땅스부대찌개</span>
+                    </h3>
+                    <div class="cate">
+                      <span>푸드</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_13.jpg"
+                        alt="즐거운별고딕체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">tvN</strong>
+                      <span>즐거운별고딕</span>
+                    </h3>
+                    <div class="cate">
+                      <span>방송</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="project_item">
+                  <a class="project_item_link">
+                    <figure class="thumbnail">
+                      <img
+                        src="/images/page_project_sum_14.jpg"
+                        alt="삼시세끼체 썸네일"
+                      />
+                    </figure>
+                    <div class="overlay"></div>
+                  </a>
+                  <div class="project_item_data">
+                    <h3>
+                      <strong class="boldEx">tvN</strong>dmd qor
+                      <span>삼시세끼</span>
+                    </h3>
+                    <div class="cate">
+                      <span>방송</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="loadmore">
+                <div class="loadmore_button">
+                  <span>프로젝트 더보기</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    viewBox="0 0 459.325 459.325"
+                  >
+                    <path
+                      d="M459.319 229.668c0 22.201-17.992 40.193-40.205 40.193H269.85v149.271c0 22.207-17.998 40.199-40.196 40.193-11.101 0-21.149-4.492-28.416-11.763-7.276-7.281-11.774-17.324-11.769-28.419l-.006-149.288H40.181c-11.094 0-21.134-4.492-28.416-11.774C4.501 250.817.006 240.769.006 229.668 0 207.471 17.992 189.475 40.202 189.475h149.267V40.202C189.469 17.998 207.471 0 229.671 0c22.192.006 40.178 17.986 40.19 40.187v149.288h149.282c22.196.012 40.165 17.996 40.176 40.193z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!-- //project_list -->
+          </div>
+          <!-- //article_body -->
+        </div>
+        <!-- //article -->
+      </div>
+      <!-- //page project -->
+
+      <!-- interactive -->
+      <div class="interactive">
+        <div class="interactive_inner">
+          <div class="wrap">
+            <h2 class="fs-txt-4">
+              <p class="boldEx">210에서 폰트로</p>
+              <p class="boldEx">하고싶은 이야기가 있나요?</p>
+            </h2>
+            <div class="buttons flex">
+              <a href="./project_info.html" class="button_ic big bgBlack">
+                <span>브랜드 전용서체</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+              <a href="./contact.html" class="button_ic big bgBlack">
+                <span>폰트 제휴 · 개발문의</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 퀵메뉴 -->
+        <div class="quickmenu_wrap">
+          <a href="/" class="quickmenu_control">
+            <i class="quickmenu_control_logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 266.65 208.06"
+              >
+                <path
+                  d="M191.83 0h74.82v169.8h-74.82V0Zm0 184.14h74.82v23.91h-74.82v-23.91ZM75.28 60.57V23.95h24.97v78.35H25.32L0 126.25v43.8h74.93V126.6h74.93l25.33-23.95V32.16L141.31 0H27.37L.35 25.32v35.25h74.93zM0 184.11h175.19v23.95H0z"
+                />
+              </svg>
+            </i>
+            <div class="quickmenu_control_hover">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                viewBox="0 0 320.591 320.591"
+              >
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                />
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                />
+              </svg>
+            </div>
+          </a>
+          <div class="quickmenu">
+            <div class="quickmenu_inner">
+              <ul class="quickmenu_list">
+                <li class="quickmenu_item">
+                  <a href="/" target="_blank">
+                    <span>210SHOP 바로가기</span>
+                    <i class="ic_shop point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="./contact.html">
+                    <span>폰트 제휴 · 개발문의</span>
+                    <i class="ic_document point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="#top">
+                    <span>맨위로가기</span>
+                    <i class="ic_arrow_top white"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//interactive -->
+      <!-- footer -->
+      <footer id="footer" data-include="./global/footer.html"></footer>
+      <!-- //footer -->
+      <!-- cursor -->
+      <div data-cursor="circle" class="cursor">
+        <div class="cursor_inner">
+          <div class="cursor_circle"></div>
+          <div class="cursor_arrow">
+            <span>프로젝트 보기</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.33 213.33">
+              <path
+                d="M377.75 207.08c-8.33 8.33-21.84 8.33-30.17 0-8.33-8.33-8.33-21.84 0-30.17L396.5 128H21.33C9.55 128 0 118.45 0 106.67s9.55-21.33 21.33-21.33h375.16l-48.92-48.92c-8.33-8.33-8.33-21.84 0-30.17 8.33-8.33 21.84-8.33 30.17 0l85.33 85.33c8.33 8.33 8.33 21.84 0 30.17l-85.33 85.33Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- //cursor -->
+    </div>
+
+    <!-- JS injected by webpack -->
+  </body>
+</html>

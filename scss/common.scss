@@ -1,0 +1,46 @@
+@use 'config' as *;
+@use 'helpers' as *;
+@use 'components' as *;
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-gsap] {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// 본문 바로가기
+.skip_nav {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  z-index: 100000;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+}
+.skip_nav:focus {
+  top: 0;
+}
+
+// 키보드 포커스 표시
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #fb5a50;
+  outline-offset: 2px;
+}

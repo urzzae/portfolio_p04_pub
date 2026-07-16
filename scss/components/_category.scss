@@ -1,0 +1,61 @@
+@use '../helpers' as *;
+
+// ** category.scss
+// 게시판, 글 분류용 스타일
+
+.category {
+    &_list {
+        padding: 0 1%;
+        @include flex-flexbox;
+        @include mq-tablet {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding: 0 0 4px;
+            scrollbar-width: none;
+            &::-webkit-scrollbar { display: none; }
+        }
+    }
+    &_item {
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        padding: 5px 17px 5px 16px;
+        color: $colorGray;
+        border: 2px solid $colorLineGray;
+        border-radius: 20px;
+        transition: .15s ease-in-out;
+        flex-shrink: 0;
+        span {
+            vertical-align: middle;
+            font-family: $fontBold;
+            font-size: $fsXsmall;
+        }
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        &::before {
+            @include mixin-absolute;
+            top: 12px;
+            left: 15px;
+            width: 10px;
+            height: 6px;
+            border-left: solid 2px $colorPo01;
+            border-bottom: solid 2px $colorPo01;
+            @include mixin-rotate(-45);
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+        }
+        &.active {
+            color: $colorPo01;
+            border-color: $colorPo01;
+            padding-left: 35px;
+            transition: all .25s ease-in-out;
+            &::before {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            color: $colorPo01;
+        }
+    }
+}

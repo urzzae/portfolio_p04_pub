@@ -1,0 +1,145 @@
+@use "../../helpers" as *;
+
+// ** project_info_process.scss
+
+.project_info {
+  &_process {
+    color: #fff;
+    background-image: linear-gradient(45deg, $colorPo01 30%, #ff985a);
+    padding: {
+      top: clamp(125px, 12.5vw, 185px);
+      bottom: clamp(125px, 12.5vw, 185px);
+    }
+    &_list {
+      @include flex-flexbox;
+      @include mq-lapSmall {
+        @include flex-wrap(y);
+        gap: 45px 30px;
+      }
+      @include mq-mobile {
+        @include flex-direction(col);
+        @include flex-align(center);
+      }
+    }
+    &_item {
+      position: relative;
+      width: 25%;
+      @include mq-lapSmall {
+        width: calc(50% - 15px);
+      }
+      @include mq-mobile {
+        width: 100%;
+      }
+      &_title {
+        font-family: "wf210마루고딕060";
+        padding-bottom: 25px;
+        @include mq-tablet {
+          text-align: center;
+        }
+      }
+      &:not(:last-child) {
+        margin-right: 60px;
+        @include mq-lapSmall {
+          margin-right: 0;
+        }
+        &::before {
+          @include mixin-absolute;
+          top: 125px;
+          right: 5px;
+          @include mixin-arrow(#fff);
+          width: 20px;
+          height: 20px;
+          @include mq-lapSmall {
+            display: none;
+          }
+        }
+      }
+      ul {
+        padding-top: 35px;
+        @include flex-flexbox;
+        @include flex-direction(col);
+        @include mq-tablet {
+          @include flex-align(center);
+        }
+        li {
+          position: relative;
+          padding-left: 14px;
+          font-family: $fontTitle;
+          letter-spacing: 0;
+          &::before {
+            @include mixin-absolute;
+            top: 10px;
+            left: 0;
+            width: 6px;
+            height: 1px;
+            border-radius: 50px;
+            background: #fff;
+          }
+          &:not(:last-child) {
+            padding-bottom: 10px;
+          }
+        }
+      }
+      // 프로세스 svg
+      .process_ic {
+        width: 40px;
+        height: 60px;
+        @include flex-flexbox;
+        @include flex-align(center);
+        @include mq-tablet {
+          margin: {
+            left: auto;
+            right: auto;
+          }
+        }
+        &_1 {
+          .draw_line_1 {
+            fill: none;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+        }
+        &_2 {
+          .draw_line_1 {
+            fill: none;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+        }
+        &_3 {
+          .draw_line_1 {
+            fill: none;
+            stroke: #fff;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+          .ic_text {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-weight: bold;
+            line-height: 1.8;
+            fill: #fff;
+          }
+        }
+        &_4 {
+          .draw_line_1 {
+            fill: none;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+          .ic_text {
+            font-family: $fontBold;
+            line-height: 1.8;
+            fill: #fff;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

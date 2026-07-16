@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+// ** cursor.scss
+
+.cursor {
+  position: fixed;
+  z-index: 9999 !important;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include mixin-pointer-none;
+  @include mixin-translate(-50%, -50%);
+  transition: transform 0.25s;
+  &_inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &_circle,
+  &_arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  &_circle {
+    background-color: rgba(255, 255, 255, 0.95);
+    top: 50%;
+    left: 50%;
+    @include mixin-translate(-50%, -50%);
+    transition: all 0.25s ease-in-out;
+  }
+  &_arrow {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    @include flex-direction(col);
+    transition: opacity 0.25s;
+    span {
+      font-size: 14px;
+      color: $colorPo01;
+      font-family: $fontBold;
+      padding-bottom: 5px;
+    }
+    > svg {
+      width: 20px;
+      @include mixin-animation(move-right, 0.65s, infinite);
+      path {
+        fill: $colorPo01;
+      }
+    }
+  }
+  &.active {
+    .cursor_circle {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    .cursor_arrow {
+      opacity: 1;
+      > svg {
+        left: 0px;
+      }
+    }
+  }
+}

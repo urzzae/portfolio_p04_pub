@@ -1,0 +1,132 @@
+@use '../../helpers' as *; 
+
+// ** careers_culture.scss
+
+.culture {
+    &_list {
+        @include flex-flexbox;
+        @include flex-wrap(y);
+        border-top: 2px solid $colorDef;
+        border-bottom: 2px solid $colorDef;
+        overflow: hidden;
+    }
+    &_item {
+        @include flex-flexbox;
+        @include flex-direction(col);
+        @include flex-justify(end);
+        overflow: hidden;
+        width: 25%;
+        height: 265px;
+        padding: 35px 20px 35px 20px;
+        &:nth-child(-n+4) {
+            border-bottom: 1px solid $colorLineGray;
+        }
+        &_content {
+            padding-top: 20px;
+            width: 100%;
+            h3 {
+                padding-bottom: 5px;
+                strong {
+                    font-family: $fontBoldEx;
+                    font-weight: normal;
+                    color: $colorPo01;
+                }
+            }
+        }
+    }
+}
+
+// svg
+.draw_ic {
+    width: 60px;
+    > svg {
+        path {
+            stroke-linecap:round;
+            stroke-linejoin:round;
+        }
+    }
+    &.calendar {
+        .draw_line_1 {
+            fill: $colorDef;
+        }
+        .draw_line_2 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+    }
+    &.clock {
+        padding-left: 1px;
+        .draw_line_2 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 14px;
+        }
+    }
+    &.airplane {
+        .draw_line_2 {
+            fill: #fff;
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+        .draw_line_1 {
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+    }
+    &.gift {
+        .draw_line_1 {
+            fill: #fff;
+        }
+        .draw_line_2 {
+            fill: $colorDef;
+        }
+        .draw_line_3 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 18px;
+        }
+    }
+    &.letter {
+        .draw_line_1 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+    }
+    &.hoodie {
+        padding-left: 1px;
+        .draw_line_1 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+    }
+    &.cake {
+        .draw_line_1 {
+            stroke: $colorDef;
+            fill: #fff;
+        }
+        .draw_line_2 {
+            stroke: $colorDef;
+            fill: #fff;
+            stroke-width: 17px;
+        }
+        .draw_line_3 {
+            fill: $colorDef;
+        }
+    }
+    &.coffee {
+        .draw_line_1 {
+            fill-rule:evenodd;
+        }
+        .draw_line_1, .draw_line_2 {
+            fill: none;
+            stroke: $colorDef;
+            stroke-width: 16px;
+        }
+        .draw_line_3 {
+            stroke: $colorDef;
+        }
+    }
+}

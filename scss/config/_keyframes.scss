@@ -1,0 +1,230 @@
+@use '../helpers' as *; 
+
+// ** keyframes.scss
+
+// fade-in
+@include mixin-keyframes(fade-in) {
+        0% {
+                opacity: 0;
+        }
+        100% {
+                opacity: 1;
+        }
+}
+
+// 버튼 -> 아이콘
+@include mixin-keyframes(move-right) {
+        0% {
+                @include mixin-translate(-10px, 0);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+
+// 스크롤다운 아이콘
+@include mixin-keyframes(scrolldown-wheel) {
+        0% {
+                opacity: 0;
+                height: 6px;
+        }
+        40% {
+                opacity: 1;
+                height: 10px;
+        }
+        80% {
+                @include mixin-translate(0, 20px);
+                height: 10px;
+                opacity: 0;
+        }
+        100% {
+                height: 3px;
+                opacity: 0;
+        }
+}
+@include mixin-keyframes(scrolldown-arrow-opacity) {
+        from {
+                opacity: 0;
+        }
+        to {
+                opacity: 0.5;
+        }
+}
+
+// Rolling Text
+@include mixin-keyframes(rollingText) {
+        0% {
+                background-position: 0px 0px;
+        }
+        100% {
+                background-position: -4000px 0px;
+        }
+}
+
+
+// quickmenu
+@include mixin-keyframes(spin) {
+        to {
+                @include mixin-rotate(360);
+        }
+}
+
+// 슬라이드
+@include mixin-keyframes(visual-slide-progressbar) {
+        to {
+                height: 100%;
+        }
+}
+@include mixin-keyframes(visual-slide-in-top) {
+        0% {
+                @include mixin-translate(0, -150px);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+
+// ** 이모티콘 애니메이션
+// heartbeat
+@-webkit-keyframes heartbeat {
+        from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+        10% {
+        -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        }
+        17% {
+        -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+        33% {
+        -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        }
+        45% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+        }
+        @keyframes heartbeat {
+        from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+        10% {
+        -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        }
+        17% {
+        -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+        33% {
+        -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        }
+        45% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        }
+}
+
+// 키워드 아이콘 애니메이션
+@include mixin-keyframes(shape-top) {
+        0% {
+                @include mixin-translate(0, 100px);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-bottom) {
+        0% {
+                @include mixin-translate(0, -100px);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-fade-in) {
+        0% {
+                opacity: 0;
+        }
+        100% {
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-spin) {
+        0% {
+                @include mixin-rotate(0);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-rotate(360);
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-left) {
+        0% {
+                @include mixin-translate(-100px, 0);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-left-bottom) {
+        0% {
+                @include mixin-translate(100px, 100px);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-translate(0, 0);
+                opacity: 1;
+        }
+}
+@include mixin-keyframes(shape-zoom) {
+        0% {
+                @include mixin-scale(0);
+                opacity: 0;
+        }
+        100% {
+                @include mixin-scale(1);
+                opacity: 1;
+        }
+}

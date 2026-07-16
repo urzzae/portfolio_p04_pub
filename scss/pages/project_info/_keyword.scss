@@ -1,0 +1,222 @@
+@use "../../helpers" as *;
+
+// ** project_info_keyword.scss
+
+.project_info {
+  &_keyword {
+    padding-bottom: clamp(75px, 12.5vw, 185px);
+    .wrap {
+      @include flex-flexbox;
+      @include flex-wrap(y);
+      @include mq-lapSmall {
+        @include flex-direction(col);
+      }
+      .keyword {
+        &_content {
+          @include mq-mobile {
+            padding-bottom: 25px;
+          }
+        }
+        @include flex-flexbox;
+        @include flex-justify(between);
+        border-radius: 10px;
+        background-color: $colorBgGray;
+        padding: 35px 45px;
+        @include mq-mobile {
+          padding: 25px 35px;
+          @include flex-direction(col);
+        }
+        h3 {
+          strong {
+            width: 100%;
+          }
+        }
+        p {
+          line-height: 1.8;
+          padding-top: 15px;
+          @include mq-mobile {
+            word-break: break-all;
+            br {
+              display: none;
+            }
+          }
+        }
+        // 아이콘 공통
+        &_icon {
+          .shape,
+          text {
+            opacity: 0;
+            animation-play-state: paused;
+            &.running {
+              animation-play-state: running;
+            }
+          }
+          width: 300px;
+          @include mq-lapSmall {
+            width: 250px;
+          }
+          @include mq-mobile {
+            width: 200px;
+            max-width: 100%;
+          }
+          svg {
+            height: auto;
+            width: 100%;
+            text {
+              text-anchor: middle;
+            }
+          }
+          @include mq-mobile {
+            margin: {
+              left: auto;
+              right: auto;
+            }
+          }
+        }
+        // 독창적
+        &_1 {
+          width: 370px;
+          @include flex-direction(col);
+          @include mq-lapSmall {
+            width: 100%;
+            @include flex-direction(row);
+          }
+          @include mq-mobile {
+            @include flex-direction(col);
+          }
+          margin: {
+            right: 35px;
+            bottom: 35px;
+          }
+          .keyword_icon {
+            padding-top: 65px;
+            @include mq-lapSmall {
+              padding-top: 0;
+            }
+            // 아이콘 애니메이션
+            .shape_01 {
+              @include mixin-translate(0, 100px);
+              @include mixin-animation(shape-top, 1s, 1, 0.5s);
+            }
+            .shape_02 {
+              @include mixin-translate(0, 100px);
+              @include mixin-animation(shape-top, 1s, 1, 0.25s);
+            }
+            .shape_03,
+            text {
+              @include mixin-animation(shape-fade-in, 1s, 1, 0);
+            }
+          }
+        }
+        // 매력적
+        &_2 {
+          height: 50%;
+          margin-bottom: 35px;
+          // 아이콘 애니메이션
+          .shape_01 {
+            @include mixin-translate(0, 100px);
+            @include mixin-animation(shape-top, 1s, 1, 0.25s);
+          }
+          .shape_03 {
+            @include mixin-translate(0, -100px);
+            @include mixin-animation(shape-bottom, 1s, 1, 0.25s);
+          }
+          .shape_02,
+          text {
+            @include mixin-animation(shape-fade-in, 1s, 1, 0);
+          }
+        }
+        // 감성적
+        &_3 {
+          height: 50%;
+          margin-bottom: 35px;
+          // 아이콘 애니메이션
+          .shape_02 {
+            @include mixin-translate(0, 100px);
+            @include mixin-animation(shape-spin, 1s, 1, 0.25s);
+            @include mixin-transform-origin(center);
+          }
+          .shape_01,
+          text {
+            @include mixin-animation(shape-fade-in, 1s, 1, 0);
+          }
+        }
+        // 문화적
+        &_4 {
+          width: calc(50% - 35px);
+          margin-right: 35px;
+          @include mq-lapSmall {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 35px;
+          }
+          // 아이콘 애니메이션
+          .shape_01,
+          text {
+            @include mixin-animation(shape-fade-in, 1s, 1, 0);
+          }
+          .shape_02 {
+            @include mixin-translate(-100px, 0);
+            @include mixin-animation(shape-left, 1s, 1, 0.25s);
+            @include mixin-transform-origin(center);
+          }
+          .shape_03 {
+            @include mixin-translate(100px, 100px);
+            @include mixin-animation(shape-left-bottom, 1s, 1, 0.5s);
+            @include mixin-transform-origin(center);
+          }
+        }
+        // 과학적
+        &_5 {
+          width: 50%;
+          @include mq-lapSmall {
+            width: 100%;
+          }
+          // 아이콘 애니메이션
+          .shape_02 {
+            @include mixin-scale(0);
+            @include mixin-animation(shape-zoom, 1s, 1, 0.25s);
+            @include mixin-transform-origin(center);
+          }
+          .shape_01 {
+            @include mixin-animation(shape-top, 1s, 1, 0.5s);
+          }
+          .shape_03,
+          text {
+            @include mixin-animation(shape-fade-in, 1s, 1, 0);
+          }
+        }
+        &_wrap {
+          @include flex-flexbox;
+          &_col {
+            width: calc(100% - 375px - 35px);
+            @include flex-grow(1);
+            @include flex-direction(col);
+            @include mq-lapSmall {
+              width: 100%;
+            }
+          }
+          &_row {
+            width: 100%;
+            @include mq-lapSmall {
+              @include flex-direction(col);
+            }
+          }
+        }
+        &_icon {
+          @include flex-flexbox;
+          @include flex-justify(center);
+          @include flex-align(center);
+          padding: 0 15px;
+          svg {
+            text {
+              font-size: 30px;
+              font-family: $fontBold;
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

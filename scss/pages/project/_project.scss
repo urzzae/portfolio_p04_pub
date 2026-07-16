@@ -1,0 +1,101 @@
+@use '../../helpers' as *; 
+
+.project {
+    &_list {
+        @include flex-flexbox;
+        @include flex-wrap(y);
+        padding-bottom: 25px;
+    }
+    &_item {
+        width: 30.333%;
+        margin: 2% 1.5%;
+        @include mq-tablet {
+            width: 46%;
+        }
+        @include mq-mobile {
+            width: 100%;
+            margin: 0 0 35px;
+        }
+        &.is-hidden {
+            width: 0;
+            height: 0;
+            margin: 0;
+            visibility: hidden;
+            opacity: 0;
+            transform: translate3d(0,100px,0);
+            @include mixin-transform(translate3d(0,100px,0));
+            transition: transform .8s, opacity .8s;
+        }
+        &.is-show {
+            visibility: visible;
+            opacity: 1;
+            @include mixin-transform(translate3d(0,0,0));
+            transition: transform .8s, opacity .8s;
+        }
+        &_link {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            .thumbnail {
+                transition: transform .45s;
+                img {
+                    max-width: 100%;
+                }
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                z-index: -1;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                //background-color: rgba(0,0,0,0.25);
+                transition: all .25s ease-in-out;
+                @include flex-center;
+            }
+            &:hover {
+                cursor: none;
+                .thumbnail {
+                    @include mixin-scale(1.2);
+                }
+                .overlay {
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+        }
+        &_data {
+            padding: 15px 5px 0 5px;
+            @include flex-flexbox;
+            @include flex-align(center);
+            @include flex-justify(between);
+            .cate {
+                cursor: pointer;
+                span {
+                    padding: 5px 12px;
+                    border-radius: 30px;
+                    color: $colorGray;
+                    border: 2px solid $colorLineGray;
+                    font-size: 12px;
+                    font-family: $fontBold;
+                    transition: all .25s ease-in-out;
+                }
+                &:hover {
+                    span {
+                        color: $colorPo01;
+                    }
+                }
+            }
+            h3 {
+                @include flex-flexbox;
+                font-size: $fsDef;
+                padding-right: 10px;
+                strong {
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

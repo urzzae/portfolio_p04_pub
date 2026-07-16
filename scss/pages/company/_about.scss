@@ -1,0 +1,42 @@
+@use "../../helpers" as *;
+
+// ** company_about.scss
+
+.company {
+  &_about {
+    padding-bottom: 460px;
+    @include mq-lapSmall {
+      padding-bottom: 165px;
+    }
+    &_content {
+      .wrap {
+        @include flex-flexbox;
+        @include flex-justify(between);
+        padding-top: clamp(45px, 5.7vw, 85px);
+        @include mq-lapSmall {
+          @include flex-direction(col);
+        }
+      }
+      &_left {
+        @include flex-flexbox;
+        @include flex-direction(col);
+        @include flex-align(baseline);
+        h2 {
+          padding-bottom: 25px;
+        }
+      }
+      &_right {
+        padding-top: 25px;
+        width: calc(100% - clamp(300px, 44.6vw, 660px));
+        @include mq-lapSmall {
+          width: 100%;
+        }
+        p {
+          &:not(:first-child) {
+            padding-top: 25px;
+          }
+        }
+      }
+    }
+  }
+}

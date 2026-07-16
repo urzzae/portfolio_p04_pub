@@ -1,0 +1,29 @@
+@use '../../helpers' as *; 
+
+// ** main_partners.scss
+
+.main_partners {
+    padding-top: clamp(65px, 15.2vw, 225px);
+    &_list {
+        @include flex-wrap(y);
+        @include flex-justify(center);
+    }
+    &_item {
+        width: 12.5%;
+        overflow: hidden;
+        text-align: center;
+        @include mq-tablet {
+            width: 25%;
+        }
+        img {
+            transition: all .25s ease-in-out;
+            max-width: 100%;
+        }
+        &:hover {
+            img {
+                opacity: 1;
+                filter: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,338 @@
+@use "../helpers" as *;
+
+// ** header.scss
+
+// 로고
+.logo {
+  margin: 0;
+  a {
+    @include flex-flexbox;
+    text-align: center;
+  }
+  svg {
+    fill: $colorDef;
+    width: 120px;
+    height: auto;
+    vertical-align: top;
+    @include mq-tablet {
+      width: 90px;
+    }
+  }
+}
+/* ------ header ------ */
+.scroll-has {
+  #header {
+    .header_container {
+      background-color: #fff;
+      //border-bottom: 1px solid $colorLineGray;
+    }
+  }
+}
+#header {
+  &_wrap {
+    display: inline-block;
+    vertical-align: middle;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include mixin-pointer-none;
+    z-index: 9998;
+  }
+  .header_container {
+    position: fixed;
+    @include mixin-pointer-auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid $colorLineGray;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: all 0.25s ease-out;
+    > .header_inner {
+      @include flex-flexbox;
+      @include flex-justify(between);
+      @include flex-align(center);
+      height: 100%;
+      padding: 0 75px;
+      position: static;
+      @include mq-lapSmall {
+        padding: 0 25px;
+      }
+    }
+    //로고
+    .logo {
+      position: relative;
+      z-index: 9998;
+      @include flex-justify(center);
+      @include flex-align(center);
+    }
+    //메뉴, 링크 공통 설정
+    .menu,
+    .link {
+      @include flex-flexbox;
+      &_list {
+        @include flex-flexbox;
+      }
+      &_item {
+        font-family: $fontBold;
+      }
+    }
+    //메뉴
+    //pc
+    .menu_pc {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      &_list {
+        width: 100%;
+        height: 100%;
+        @include flex-align(center);
+        @include flex-justify(center);
+      }
+      &_item {
+        height: 100%;
+        @include flex-flexbox;
+        @include flex-align(center);
+        a {
+          display: block;
+          padding: 0 25px;
+          transition: color 0.15s ease-in-out;
+          &:hover {
+            color: $colorPo01;
+          }
+          span {
+            position: relative;
+            padding: 4px 2px;
+          }
+          //클릭, 현재 페이지 표시
+          &.current {
+            span {
+              color: $colorPo01;
+              &::before {
+                @include mixin-absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                margin: auto;
+                background-color: $colorPo01;
+                border-radius: 50px;
+                @include mixin-animation(currentLine, 0.25s);
+              }
+              @include mixin-keyframes(currentLine) {
+                0% {
+                  width: 0%;
+                }
+                100% {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .link_pc {
+      position: relative;
+      z-index: 9;
+      padding: 0;
+      margin: 0;
+      &_item {
+        padding-top: 2px;
+        &:not(:last-child) {
+          position: relative;
+          margin-right: 15px;
+        }
+        a {
+          @include flex-center;
+          transition: 0.15s ease-in-out;
+          //background: $colorBgGray;
+          border: 2px solid $colorDef;
+          border-radius: 30px;
+          padding: 0px 15px 0px 15px;
+          span {
+            padding-left: 5px;
+            font-size: 1rem;
+            font-family: $fontBoldEx;
+          }
+          .ic_shop,
+          .ic_news {
+            width: 1.6rem;
+            margin-top: 5px;
+            transition: 0.15s ease-in-out;
+          }
+          &:hover {
+            color: $colorPo01;
+            border-color: $colorPo01;
+            background-color: lighten(#fb5a50, 33%);
+            .ic_shop {
+              background-image: icon(shop, "FB5A50");
+            }
+            .ic_news {
+              background-image: icon(news, "FB5A50");
+            }
+          }
+        }
+      }
+    }
+    .menu_pc,
+    .link_pc {
+      @include mq-lap {
+        display: none;
+      }
+    }
+    //mobile
+    .menu_mobile {
+      display: none;
+      @include mq-lap {
+        display: block;
+      }
+      &_collapes {
+        position: fixed;
+        z-index: 9998;
+        padding: {
+          top: 75px;
+          left: 35px;
+          right: 35px;
+          bottom: 25px;
+        }
+        width: 100%;
+        height: 100vh;
+        background: $colorDef;
+        top: 0;
+        right: -100%;
+        opacity: 0;
+        overflow-y: scroll;
+        transition: all 0.25s ease-out;
+        @include flex-flexbox;
+        @include flex-align(center);
+      }
+      &_list {
+        @include flex-flexbox;
+        @include flex-direction(col);
+      }
+      &_item {
+        font-size: $fsExT;
+        a {
+          span {
+            position: relative;
+            color: #fff;
+            padding: 0 10px;
+            &::before {
+              @include mixin-absolute;
+              z-index: -1;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              height: 50%;
+              background-color: $colorPo01;
+              -webkit-transform: scaleX(0);
+              -moz-transform: scaleX(0);
+              -ms-transform: scaleX(0);
+              transform: scaleX(0);
+              @include mixin-transform-origin(bottom right);
+              transition: transform 0.25s ease-in-out;
+            }
+          }
+          &:hover {
+            span {
+              &::before {
+                -webkit-transform: scaleX(1);
+                -moz-transform: scaleX(1);
+                -ms-transform: scaleX(1);
+                transform: scaleX(1);
+                @include mixin-transform-origin(bottom left);
+              }
+            }
+          }
+        }
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+      //open
+      &.open {
+        .menu_mobile_collapes {
+          right: 0;
+          opacity: 1;
+        }
+      }
+    }
+    //minimize
+    &.minimize {
+      background-color: transparent;
+      border-bottom-width: 0;
+      .menu_pc,
+      .link_pc {
+        display: none;
+      }
+      .menu_mobile {
+        display: block;
+      }
+    }
+    //햄버거메뉴
+    .hamburger_toggle {
+      position: relative;
+      z-index: 9998;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      background-color: transparent;
+      cursor: pointer;
+      span {
+        position: absolute;
+        display: block;
+        width: 70%;
+        height: 3px;
+        left: 5px;
+        background-color: #343434;
+        transition: all 0.25s ease-in-out;
+        border-radius: 10px;
+        &:nth-child(1) {
+          top: 10px;
+        }
+        &:nth-child(2) {
+          top: 18px;
+        }
+        &:nth-child(3) {
+          top: 26px;
+        }
+      }
+    }
+    &.mobile {
+      .logo {
+        z-index: 9999;
+        svg {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+      .hamburger_toggle {
+        z-index: 9999;
+        span {
+          background-color: #fff;
+          &:nth-child(1) {
+            @include mixin-transform(rotate(-45deg) translate(-6px, 3px));
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            @include mixin-transform(rotate(45deg) translate(-8px, -6px));
+          }
+        }
+      }
+    }
+  }
+  // fixed
+  &.scroll-down {
+    .header_container {
+      top: -75px;
+    }
+  }
+}

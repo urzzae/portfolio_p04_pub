@@ -1,0 +1,37 @@
+@use '../helpers' as *; 
+
+// ** topButton.scss
+// 퀵메뉴가 없는 페이지에 추가
+
+.top_button {
+    @include flex-flexbox;
+    @include flex-justify(center);
+    > a { 
+        position: relative;
+        text-align: center;
+        font-family: $fontBoldEx;
+        font-size: 12px;
+        width: 110px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 100px 100px 0 0;
+        background: $colorBgGray;
+        margin-bottom: -1px;
+        //color: $colorGray;
+        span {
+            position: absolute;
+            top: 18px;
+            left: 52px;
+            width: 10px;
+            height: 10px;
+            @include mixin-arrow($colorGray, 3px, 315deg);
+        }
+    }
+    &.outline {
+        > a {
+            border: 1px solid $colorLineGray;
+            border-bottom-width: 0;
+            background-color: #fff;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@use "../../helpers" as *;
+
+// ** service.scss
+
+.service {
+  &_item {
+    @include flex-flexbox;
+    height: 400px;
+    @include mq-lapSmall {
+      height: auto;
+      @include flex-direction(col);
+      @include flex-align(center);
+    }
+    .banner {
+      width: 700px;
+      max-width: 80%;
+      height: 100%;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    &_content {
+      @include flex-flexbox;
+      @include flex-justify(center);
+      @include flex-direction(col);
+      width: calc(100% - 700px);
+      height: 100%;
+      @include mq-lapSmall {
+        padding-top: 35px;
+        height: auto;
+        width: 100%;
+        text-align: center;
+        @include flex-align(center);
+      }
+      h4 {
+        color: $colorPo01;
+        padding-bottom: 5px;
+      }
+      p {
+        padding: 15px 0 65px 0;
+        line-height: 1.8;
+        @include mq-lapSmall {
+          padding-bottom: 35px;
+        }
+      }
+      .buttons {
+        padding-top: 0;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 165px;
+      @include mq-lapSmall {
+        margin-bottom: 65px;
+      }
+    }
+    &:nth-child(even) {
+      @include flex-direction(rowReverse);
+      @include mq-lapSmall {
+        @include flex-direction(col);
+      }
+      .service_item_content {
+        @include flex-align(end);
+        padding-right: 85px;
+        @include mq-lapSmall {
+          padding-right: 0;
+          @include flex-align(center);
+        }
+        p {
+          text-align: right;
+          @include mq-lapSmall {
+            text-align: center;
+          }
+          @include mq-mobile {
+            word-break: keep-all;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(odd) {
+      .service_item_content {
+        padding-left: 85px;
+        @include mq-lapSmall {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

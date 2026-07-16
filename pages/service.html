@@ -1,0 +1,369 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            if (!window.gsap) d.classList.remove("js");
+          }, 2000);
+        });
+      })();
+    </script>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디자인210</title>
+    <link rel="stylesheet" type="text/css" href="/css/webfont.css" />
+    <!-- CSS injected by webpack -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- JS injected by webpack -->
+  </head>
+  <body>
+    <a href="#page" class="skip_nav">본문 바로가기</a>
+    <div class="wrapper" style="overflow-x: hidden">
+      <!-- header -->
+      <header id="header">
+        <div id="header_wrap">
+          <div class="header_container">
+            <div class="header_inner">
+              <h1 class="logo">
+                <a href="./index.html">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1016.34 185.38"
+                  >
+                    <path
+                      d="M64.85 0h48.35v139.55H18.11L0 122.59v-62.1l18.11-16.96h32.08l14.66 11.69V0Zm0 59.58h-16.5v63.93h16.5V59.58ZM147.83 43.54h73.56l16.96 16.04v29.56l-16.96 16.04H173.5v18.33h61.41v16.04h-87.08l-22.69-21.54V65.08l22.69-21.54Zm25.67 16.04v29.56H190V59.58h-16.5ZM352.71 43.54v16.04h-52.25v23.83h53.85v34.6l-22.68 21.54h-81.35v-16.04h53.85V99.45h-53.85V65.08l22.69-21.54h79.75ZM416.44 31.85h-50.18V4.59h50.18v27.27Zm0 107.7h-50.18V43.54h50.18v96.01ZM430.67 168.42v-17.87h50.18v18.79h12.38v-29.79h-46.75l-18.1-16.96v-62.1l18.1-16.96h32.08l12.83 10.31 12.83-10.31h37.35v120.3l-22.68 21.54h-70.12l-18.1-16.96Zm46.06-44.91h16.5V59.58h-16.5v63.93ZM618.36 139.55V59.58h-16.5v79.97h-48.35V43.54h37.35l12.83 10.31 12.83-10.31h32.08l18.11 16.96v79.06h-48.35ZM827.53 0h50.18v113.89h-50.18V0Zm0 123.51h50.18v16.04h-50.18v-16.04ZM1016.34 21.54v96.47l-22.68 21.54h-74.7l-22.69-21.54V21.54L918.96 0h74.7l22.68 21.54Zm-50.18-5.5h-19.71v107.47h19.71V16.04ZM748.47 40.56V16.04h16.73v52.48h-50.18l-16.96 16.04v29.33h50.18v-29.1h50.18l16.96-16.04V21.54L792.69 0h-76.31l-18.1 16.96v23.6h50.18Zm-50.41 82.95v16.04h117.33v-16.04H698.06Z"
+                    />
+                  </svg>
+                </a>
+              </h1>
+              <nav class="menu menu_pc">
+                <ul class="menu_list menu_pc_list">
+                  <li class="menu_item menu_pc_item">
+                    <a href="./about.html">
+                      <span>디자인210</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./service.html" class="current">
+                      <span>사업분야</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./project.html">
+                      <span>프로젝트</span>
+                    </a>
+                  </li>
+                  <li class="menu_item menu_pc_item">
+                    <a href="./contact.html">
+                      <span>문의하기</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- mobile -->
+              <nav class="menu menu_mobile">
+                <div class="hamburger_toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="menu_mobile_collapes">
+                  <ul class="menu_list menu_mobile_list">
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./about.html">
+                        <span>디자인210</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./service.html">
+                        <span>사업분야</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./project.html" class="current">
+                        <span>프로젝트</span>
+                      </a>
+                    </li>
+                    <li class="menu_item menu_mobile_item">
+                      <a href="./contact.html">
+                        <span>문의하기</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!-- 외부링크 -->
+              <div class="link link_pc">
+                <ul class="link_list link_pc_list">
+                  <li class="link_item link_pc_item">
+                    <!-- 210쇼핑몰로 이동 -->
+                    <a href="http://www.design210.com/cloud" target="_blank">
+                      <i class="ic_shop black"></i>
+                      <span>210SHOP</span>
+                    </a>
+                  </li>
+                  <li class="link_item link_pc_item">
+                    <!-- 210블로그로 이동 -->
+                    <a href="https://blog.naver.com/design_210" target="_blank">
+                      <i class="ic_news black"></i>
+                      <span>210NEWS</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+
+      <!-- page serviece -->
+      <div id="page" class="service">
+        <!-- article -->
+        <div class="article">
+          <!-- article_header -->
+          <div class="article_header">
+            <div class="wrap">
+              <!-- <ul class="breadcrumbs" data-gsap="fade-down">
+                        <li>
+                            <a href="/main">홈</a>
+                        </li>
+                        <li class="current">
+                            <a href="/">사업분야</a>
+                        </li>
+                    </ul> -->
+              <div class="breadcrumb" data-gsap="fade-down">
+                <h3 class="fs-txt-0">사업분야</h3>
+              </div>
+              <div class="article_header_inner">
+                <h2
+                  class="fs-title-2"
+                  data-gsap="fade-up"
+                  data-gsap-delay="300"
+                >
+                  디자인210은&nbsp;<strong class="boldEx"> 계속 도전 중 </strong
+                  ><img
+                    class="emoji"
+                    src="/images/intro_service.png"
+                    alt=""
+                    data-gsap="zoom-in"
+                    data-gsap-delay="350"
+                    data-gsap-ease="ease-out-back"
+                  />입니다.
+                </h2>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="rolling_text"></div>
+          </div>
+          <!-- //article_header -->
+          <!-- article_body -->
+          <div class="article_body">
+            <div class="wrap">
+              <div
+                class="service_item font"
+                data-gsap="fade-left"
+                data-gsap-delay="500"
+              >
+                <div class="banner">
+                  <img src="/images/service_banner_01.png" alt="" />
+                </div>
+                <div class="service_item_content">
+                  <h4 class="fs-txt-0 bold">매월 업데이트되는 신서체</h4>
+                  <h3 class="fs-title-1 boldEx">디자인210 폰트</h3>
+                  <p>
+                    한글폰트를 향한 끊임없는 시도와 연구로&nbsp;<br />
+                    다채로운 폰트를 제공합니다.
+                  </p>
+                  <div class="buttons">
+                    <a href="/" class="button_ic outlineBlack xSmall">
+                      <span>상품 보러가기</span>
+                      <i class="ic_link black"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item design" data-gsap="fade-right">
+                <div class="banner">
+                  <img src="/images/service_banner_02.png" alt="" />
+                </div>
+                <div class="service_item_content">
+                  <h4 class="fs-txt-0 bold">개성넘치는 210만의</h4>
+                  <h3 class="fs-title-1 boldEx">디자인소스</h3>
+                  <p>
+                    그래픽 스타일부터 그래픽 폰트까지&nbsp;<br />
+                    폰트와 함께 사용하기 좋은 디자인소스를 제공합니다.
+                  </p>
+                  <div class="buttons">
+                    <a href="/" class="button_ic outlineBlack xSmall">
+                      <span>상품 보러가기</span>
+                      <i class="ic_link black"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item friends" data-gsap="fade-left">
+                <div class="banner">
+                  <img src="/images/service_banner_03.png" alt="" />
+                </div>
+                <div class="service_item_content">
+                  <h4 class="fs-txt-0 bold">라틴폰트부터 옛글씨까지</h4>
+                  <h3 class="fs-title-1 boldEx">프렌즈 폰트</h3>
+                  <p>
+                    개성넘치는 라틴폰트부터 시대별 의미 있는 글씨를 복원한
+                    폰트까지&nbsp;<br />
+                    210과는 또 다른 매력의 지우소프트 폰트와 협력합니다.
+                  </p>
+                  <div class="buttons">
+                    <a href="/" class="button_ic outlineBlack xSmall">
+                      <span>상품 보러가기</span>
+                      <i class="ic_link black"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item kelly" data-gsap="fade-right">
+                <div class="banner">
+                  <img src="/images/service_banner_04.png" alt="" />
+                </div>
+                <div class="service_item_content">
+                  <h4 class="fs-txt-0 bold">세세한 질감까지 살린</h4>
+                  <h3 class="fs-title-1 boldEx">캘리그라피</h3>
+                  <p>
+                    완성형부터 자음과 모음을 자유롭게 조합할 수 있는
+                    조합형까지&nbsp;<br />
+                    다채로운 활용이 가능한 백터파일을 제공합니다.
+                  </p>
+                  <div class="buttons">
+                    <a href="/" class="button_ic outlineBlack xSmall">
+                      <span>상품 보러가기</span>
+                      <i class="ic_link black"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item corporation" data-gsap="fade-left">
+                <div class="banner">
+                  <img src="/images/service_banner_05.png" alt="" />
+                </div>
+                <div class="service_item_content">
+                  <h4 class="fs-txt-0 bold">유니크한 브랜딩의 시작</h4>
+                  <h3 class="fs-title-1 boldEx">전용서체</h3>
+                  <p>
+                    브랜드의 특성을 고려해 제작된 전용서체는&nbsp;<br />
+                    브랜드 차별화, 강력한 마케팅 효과로 지속가능성을 높입니다.
+                  </p>
+                  <div class="buttons">
+                    <a
+                      href="./project_info.html"
+                      class="button_ic outline xSmall"
+                    >
+                      <span>전용서체 알아보기</span>
+                      <i class="ic_link point"></i>
+                    </a>
+                    <a href="/" class="button_ic outlineBlack xSmall">
+                      <span>프로젝트 보러가기</span>
+                      <i class="ic_link black"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //article_body -->
+        </div>
+        <!-- //article -->
+      </div>
+      <!-- //page service -->
+
+      <!-- interactive -->
+      <div class="interactive">
+        <div class="interactive_inner">
+          <div class="wrap">
+            <h2 class="fs-txt-4">
+              <p class="boldEx">210에서 폰트로</p>
+              <p class="boldEx">하고싶은 이야기가 있나요?</p>
+            </h2>
+            <div class="buttons flex">
+              <a href="./project_info.html" class="button_ic big bgBlack">
+                <span>브랜드 전용서체</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+              <a href="./contact.html" class="button_ic big bgBlack">
+                <span>폰트 제휴 · 개발문의</span>
+                <i class="ic_arrow_right white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 퀵메뉴 -->
+        <div class="quickmenu_wrap">
+          <a href="/" class="quickmenu_control">
+            <i class="quickmenu_control_logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 266.65 208.06"
+              >
+                <path
+                  d="M191.83 0h74.82v169.8h-74.82V0Zm0 184.14h74.82v23.91h-74.82v-23.91ZM75.28 60.57V23.95h24.97v78.35H25.32L0 126.25v43.8h74.93V126.6h74.93l25.33-23.95V32.16L141.31 0H27.37L.35 25.32v35.25h74.93zM0 184.11h175.19v23.95H0z"
+                />
+              </svg>
+            </i>
+            <div class="quickmenu_control_hover">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                viewBox="0 0 320.591 320.591"
+              >
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                />
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                />
+              </svg>
+            </div>
+          </a>
+          <div class="quickmenu">
+            <div class="quickmenu_inner">
+              <ul class="quickmenu_list">
+                <li class="quickmenu_item">
+                  <a href="/" target="_blank">
+                    <span>210SHOP 바로가기</span>
+                    <i class="ic_shop point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="./contact.html">
+                    <span>폰트 제휴 · 개발문의</span>
+                    <i class="ic_document point"></i>
+                  </a>
+                </li>
+                <li class="quickmenu_item">
+                  <a href="#top">
+                    <span>맨위로가기</span>
+                    <i class="ic_arrow_top white"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--//interactive -->
+      <!-- footer -->
+      <footer id="footer" data-include="./global/footer.html"></footer>
+      <!-- //footer -->
+    </div>
+
+    <!-- JS injected by webpack -->
+  </body>
+</html>

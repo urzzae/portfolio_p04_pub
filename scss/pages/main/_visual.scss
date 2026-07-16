@@ -1,0 +1,369 @@
+@use "../../helpers" as *;
+
+// ** main_visual.scss
+
+// 비주얼 슬라이드
+.main {
+  &_visual {
+    position: relative;
+    &_title {
+      line-height: 1;
+    }
+    &_wrap {
+      width: 100%;
+      height: 100dvh;
+      padding-bottom: 25px;
+      @include flex-center;
+      @include flex-direction(col);
+      cursor: default;
+      @include mixin-animation(fade-in, 1.5s);
+      @include mq-tablet {
+        max-height: 560px;
+      }
+      // 슬라이드 페이지네이션 + 프로그레스바
+      .swiper-pagination-visual {
+        position: absolute;
+        right: 85px;
+        padding-bottom: 65px;
+        @include mq-tablet {
+          display: none;
+        }
+        .swiper-pagination-bullet {
+          position: relative;
+          width: 120px;
+          @include flex-flexbox;
+          @include flex-direction(reverse);
+          @include flex-align(center);
+          height: 35px;
+          background: none;
+          transition: all 0.25s ease-in-out;
+          span {
+            font-size: 11px;
+            padding: 0 15px;
+            font-family: $fontBold;
+            color: $colorPo01;
+          }
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+          .progressbar {
+            position: relative;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: lighten(#fb5a50, 25%);
+            &::before {
+              content: "";
+              position: absolute;
+              display: block;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 0px;
+              background-color: $colorPo01;
+              opacity: 0;
+            }
+          }
+          &-active {
+            height: 65px;
+            transition: height 0.25s ease;
+            .progressbar {
+              border-radius: 30px;
+              height: 100%;
+              overflow: hidden;
+              background-color: lighten(#fb5a50, 25%);
+              transition: height 0.25s ease;
+            }
+            &.animate {
+              .progressbar {
+                &::before {
+                  opacity: 1;
+                  @include mixin-animation(
+                    visual-slide-progressbar,
+                    1.25s,
+                    0.15s
+                  );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &_slide {
+      width: clamp(280px, 50vw, 620px);
+      max-height: clamp(120px, 18vw, 280px);
+      text-align: center;
+      overflow: hidden;
+      &_item {
+        &_text {
+          width: 100%;
+          height: 100%;
+          @include flex-flexbox;
+          @include flex-justify(center);
+          span {
+            display: inline-block;
+            font-size: clamp(8rem, 12vw, 20rem);
+            color: $colorPo01;
+            height: 100%;
+          }
+          &.font_1 {
+            font-family: "wf210버터RRound";
+          }
+          &.font_2 {
+            font-family: "wf210수퍼사이즈ExtraBold";
+          }
+          &.font_3 {
+            font-family: "wf210연애시대B";
+          }
+        }
+        // 텍스트 애니메이션 추가
+        &.animate {
+          .main_visual_slide_item_text {
+            span {
+              @include mixin-animation(visual-slide-in-top, 0.65s, $mode: both);
+              animation-timing-function: cubic-bezier(
+                0.175,
+                0.885,
+                0.32,
+                1.275
+              );
+              &:nth-child(2) {
+                animation-delay: 0.05s;
+              }
+              &:nth-child(2) {
+                animation-delay: 0.1s;
+              }
+              &:nth-child(3) {
+                animation-delay: 0.15s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// stickers
+.stickers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .sticker {
+    position: absolute;
+    @include mixin-transform-origin(50% 50%);
+    cursor: grab;
+    width: 20vw;
+    min-width: 150px;
+    bottom: clamp(60px, 15dvh, 180px);
+    opacity: 0;
+    will-change: transform;
+    .decal {
+      width: 100%;
+      height: auto;
+      position: absolute;
+    }
+    .left {
+      clip-path: inset(0 50% 0 0);
+      transition: all 200ms ease-in-out;
+    }
+    .right {
+      clip-path: inset(0 0 0 50%);
+    }
+    @include mq-tablet {
+      min-width: 100px;
+      bottom: 10dvh;
+    }
+    &_1 {
+      left: -5%;
+      width: 25.5vw;
+      max-width: 500px;
+      z-index: 2;
+      @include mq-lapSmall {
+        margin-bottom: -6.5dvh;
+      }
+      .sticker_img {
+        @include mixin-translate(0, -10vh);
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .left {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .left {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(50deg));
+      }
+    }
+    &_2 {
+      left: 10%;
+      z-index: 3;
+      width: 22.5vw;
+      max-width: 450px;
+      margin-bottom: 65px;
+      @include mq-lapSmall {
+        margin-bottom: -2dvh;
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .right {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .right {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(-60deg));
+      }
+    }
+    &_3 {
+      left: 22%;
+      width: 22.5vw;
+      max-width: 450px;
+      z-index: 4;
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .left {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .left {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(60deg));
+      }
+    }
+    &_4 {
+      right: 25%;
+      width: 15vw;
+      max-width: 400px;
+      margin-bottom: 65px;
+      z-index: 2;
+      @include mq-lapSmall {
+        margin-bottom: 5dvh;
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .left {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .left {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(60deg));
+      }
+    }
+    &_5 {
+      right: 12%;
+      width: 22.5vw;
+      max-width: 450px;
+      margin-bottom: 115px;
+      z-index: 3;
+      @include mq-lapSmall {
+        margin-bottom: 2dvh;
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .right {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .right {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(-60deg));
+      }
+    }
+    &_6 {
+      right: -5%;
+      width: 25vw;
+      max-width: 600px;
+      z-index: 2;
+      @include mq-lapSmall {
+        margin-bottom: -10dvh;
+      }
+      .sticker_img {
+        @include mixin-translate(0, -10vh);
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .left {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .left {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(60deg));
+      }
+    }
+    &_7 {
+      right: 10%;
+      width: 18vw;
+      max-width: 300px;
+      margin-bottom: 35px;
+      z-index: 1;
+      @include mq-lapSmall {
+        margin-bottom: -3.5dvh;
+      }
+      .sticker_img {
+        @include mixin-translate(0, -12.2vh);
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .right {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .right {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(-60deg));
+      }
+    }
+    &_8 {
+      left: 20%;
+      width: 18vw;
+      max-width: 350px;
+      @include mq-lapSmall {
+        margin-bottom: -6dvh;
+      }
+      .sticker_img {
+        @include mixin-translate(0, -12.2vh);
+      }
+      .shadow {
+        filter: brightness(0%);
+        opacity: 0.05;
+      }
+      .right {
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(0deg));
+      }
+      &:hover .right {
+        filter: brightness(98%);
+        transition: all 200ms ease-in-out;
+        @include mixin-transform(perspective(600px) rotateY(-60deg));
+      }
+    }
+  }
+}

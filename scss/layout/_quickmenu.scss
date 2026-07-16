@@ -1,0 +1,189 @@
+@use "../helpers" as *;
+
+// ** quickmenu.scss
+
+.quickmenu_wrap {
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  z-index: 999;
+  bottom: 65px;
+  right: -160px;
+  transition: right 0.5s ease-in-out;
+  @include mq-tablet {
+    display: none;
+  }
+  .quickmenu_control {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    border: $border-width solid $colorPo01;
+    border-radius: 50%;
+    z-index: 98;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+    &_logo,
+    &_hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    &_logo {
+      opacity: 1;
+      @include flex-center;
+      svg {
+        fill: $colorPo01;
+        width: 30px;
+        height: auto;
+      }
+    }
+    &_hover {
+      opacity: 0;
+      @include flex-center;
+      svg {
+        fill: $colorPo01;
+        stroke-miterlimit: 20;
+        stroke-width: 15px;
+        stroke: $colorPo01;
+        @include mixin-scale(0);
+      }
+    }
+    &:hover {
+      background-color: $colorPo01;
+      .quickmenu_control_logo {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+    &::before {
+      @include mixin-absolute;
+      top: -22px;
+      right: -22px;
+      width: 115px;
+      height: 115px;
+      background: url(/images/quickmenu_line_txt.png);
+      @include mixin-animation(spin, 22s, infinite);
+    }
+    &.active {
+      background-color: $colorPo01;
+      .quickmenu_control_hover {
+        opacity: 1;
+        svg {
+          fill: #fff;
+          stroke: #fff;
+          @include mixin-scale(1);
+        }
+      }
+      .quickmenu_control_logo {
+        opacity: 0;
+        @include mixin-scale(0);
+        transition: all 0.25s ease-in-out;
+      }
+    }
+  }
+  //푸터에 닿으면 fixed 해제
+  &.no-fixed {
+    position: absolute;
+    bottom: auto;
+    top: -145px;
+    .quickmenu_control {
+      position: absolute;
+    }
+  }
+  &.scroll-down {
+    right: 65px;
+  }
+}
+//퀵메뉴 리스트
+.quickmenu {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  @include mixin-translate(-50%, 0);
+  width: 180px;
+  &_inner {
+    position: relative;
+    transition: all 0.15s ease-in-out;
+    @include mixin-transform(matrix(1, 0, 0, 0.65, 0, 50));
+    opacity: 0;
+    visibility: hidden;
+    &:before {
+      @include mixin-absolute;
+      bottom: -10px;
+      left: 50%;
+      border-bottom: 10px solid $colorPo01;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      width: 10px;
+      height: 10px;
+      @include mixin-transform(translateX(-50%) rotate(180deg));
+    }
+  }
+  &_list {
+    @include flex-flexbox;
+    @include flex-direction(col);
+    border-radius: 10px;
+    border: 2px solid $colorPo01;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  &_item {
+    a {
+      @include flex-flexbox;
+      @include flex-align(center);
+      @include flex-justify(between);
+      padding: 15px 15px;
+      font-size: 12px;
+      font-family: $fontBold;
+      color: $colorPo01;
+      transition: background-color 0.15s ease-in-out;
+      svg {
+        fill: $colorPo01;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 2px solid $colorPo01;
+      a {
+        &:hover {
+          background-color: lighten(#fb5a50, 33%);
+        }
+      }
+    }
+    &:nth-child(2) {
+      a {
+        svg {
+          stroke: $colorPo01;
+          stroke-miterlimit: 20;
+          stroke-width: 5px;
+        }
+      }
+    }
+    &:last-child {
+      transition: background-color 0.15s ease-in-out;
+      a {
+        background-color: $colorPo01;
+        transition: background-color 0.15s ease-in-out;
+        color: #fff;
+        padding-right: 19px;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  &.open {
+    .quickmenu_inner {
+      opacity: 1;
+      visibility: visible;
+      @include mixin-transform(matrix(1, 0, 0, 1, 0, 0));
+    }
+  }
+}

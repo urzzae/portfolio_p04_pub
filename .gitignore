@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+
+# SCSS 컴파일 산출물 (webpack이 빌드 시 생성)
+scss/**/*.css
+scss/**/*.css.map
+
+# 에디터 개인 설정
+.vscode/

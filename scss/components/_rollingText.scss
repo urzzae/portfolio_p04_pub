@@ -1,0 +1,38 @@
+//scroll_icon
+@use "../helpers" as *;
+
+// ** rollingText.scss
+
+.section {
+  position: relative;
+}
+.rolling_text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 125px;
+  z-index: 2;
+  width: 4000px;
+  height: 158px;
+  background: url("/images/rollingText3.png") repeat-x left top;
+  background-size: 100%;
+  @include mixin-animation(rollingText, 60s, infinite);
+  animation-timing-function: linear;
+  opacity: 0.65;
+  @include mq-lapSmall {
+    background-size: 50%;
+    bottom: 55px;
+    height: 60px;
+  }
+}
+
+// 위치조절
+.article_header {
+  position: relative;
+  .rolling_text {
+    bottom: -65px;
+    @include mq-lapSmall {
+      bottom: -25px;
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@use "../helpers" as *;
+
+// ** buttons.scss
+
+// 버튼이 여러개 있을 때 -> buttons 로 묶어줌
+// 기본 -> button 아이콘추가 -> button_ic
+// 스타일 -> outline | outlineBlack | black | point | gray | disabled | white (배경 화이트)
+// 사이즈 -> wide | big | medium | Xsmall
+
+// ----- button mixin -----
+// 사이즈 관리
+@mixin button-size($tb, $lr) {
+  padding: {
+    top: $tb;
+    bottom: $tb;
+    left: $lr;
+    right: $lr;
+  }
+}
+
+// 스타일 관리
+@mixin button-radius($radius: "50px") {
+  border-radius: #{$radius};
+}
+
+@mixin button-border($color, $subColor, $width: "2px") {
+  border: #{$width} solid $color;
+  background: $subColor;
+  span,
+  svg {
+    fill: $color;
+    color: $color;
+  }
+  &:hover {
+    span,
+    svg {
+      fill: $subColor;
+      color: $subColor;
+    }
+    background-color: $color;
+  }
+}
+
+@mixin button-bg($color, $subColor) {
+  background: $color;
+  border: 2px solid $color;
+  span,
+  svg {
+    //stroke: $subColor;
+    fill: $subColor;
+    color: $subColor;
+  }
+  &:hover {
+    background: $subColor;
+    span,
+    svg {
+      color: $color;
+    }
+  }
+}
+
+@mixin button-bg-color($color, $subColor) {
+  background: $color;
+  span,
+  svg {
+    //stroke: $subColor;
+    fill: #fff;
+    color: #fff;
+  }
+  &:hover {
+    background: $subColor;
+  }
+}
+
+// ----- buttons -----
+// 버튼 여러개 있을 경우
+.buttons {
+  @include flex-flexbox;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  //padding-top: 35px;
+  &.center {
+    @include flex-justify(center);
+    @include flex-align(center);
+  }
+  &.col {
+    @include flex-direction(col);
+  }
+  @include mq-min {
+    @include flex-direction(col);
+  }
+}
+
+// ----- button -----
+// 기본
+.button,
+.button_ic {
+  cursor: pointer;
+  border: inherit;
+  background: inherit;
+  @include flex-center;
+  transition: all 0.25s ease-in-out;
+  span {
+    text-align: center;
+    font-family: $fontBold;
+    transition: all 0.25s ease-in-out;
+    @include mq-tablet {
+      font-size: 12px;
+    }
+  }
+  svg {
+    transition: all 0.25s ease-in-out;
+  }
+}
+
+// 아이콘 있을 경우
+.button_ic {
+  &.big {
+    span {
+      padding-right: 10px;
+    }
+  }
+  &.medium {
+    span {
+      padding-right: 6px;
+    }
+  }
+  &.xSmall {
+    span {
+      padding-right: 3px;
+    }
+  }
+}
+
+// 사이즈
+.button,
+.button_ic {
+  &.big {
+    min-width: 220px;
+    min-height: 60px;
+    @include button-size(15px, 30px);
+    @include mq-tablet {
+      min-width: 120px;
+      min-height: 35px;
+      padding: {
+        top: 10px;
+        bottom: 12px;
+        left: 25px;
+        right: 25px;
+      }
+    }
+  }
+  &.medium {
+    @include button-size(10px, 20px);
+  }
+  &.xSmall {
+    @include button-size(6px, 15px);
+    min-height: 35px;
+    span {
+      font-family: $fontBold;
+      font-size: 1.25rem;
+    }
+    .arrow_link {
+      margin-bottom: 1px;
+      transition: all 0.15s linear;
+    }
+  }
+  &.wide {
+    width: 100%;
+    @include button-size(20px, 15px);
+  }
+}
+
+// 스타일, 아이콘
+.button,
+.button_ic {
+  &.outline {
+    @include button-border($colorPo01, #fff);
+    @include button-radius();
+  }
+  &.outlineBlack {
+    @include button-border($colorDef, #fff);
+    @include button-radius();
+  }
+  &.outline,
+  &.outlineBlack {
+    i {
+      transition: 0.15s ease-in-out;
+    }
+    &:hover {
+      .ic_arrow_right {
+        background-image: icon(arrow-right, "fff");
+      }
+      .ic_link {
+        background-image: icon(link, "fff");
+      }
+      .ic_download {
+        background-image: icon(download, "fff");
+      }
+    }
+  }
+  &.bg {
+    @include button-bg($colorPo01, #fff);
+    @include button-radius();
+  }
+  &.bgBlack {
+    @include button-bg-color($colorDef, $colorPo01);
+    @include button-radius();
+  }
+  &.disabled {
+    background-color: $colorBgGray;
+    @include button-radius();
+    span,
+    svg {
+      color: $colorMidGray;
+    }
+  }
+  &.white {
+    span,
+    svg {
+      color: $colorDef;
+    }
+    &:hover {
+      span,
+      svg {
+        color: $colorPo01;
+      }
+    }
+  }
+}
+.button_ic {
+  &:hover {
+    // 마우스 오버시 오른쪽 화살표 움직임 추가
+    .ic_arrow_right {
+      @include mixin-animation(move-right, 0.4s, both);
+      animation-timing-function: ease-out;
+    }
+  }
+}

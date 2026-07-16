@@ -1,0 +1,154 @@
+// ** icons.scss
+
+// 자주 사용하는 아이콘 묶음
+// svg 관리
+@function _buildIcon($icon) {
+    $icon: "#{$icon}";
+    @return $icon;
+}
+
+@function icon($icon-name, $color, $color2: "") {
+    $icons: (
+        //SVG 아이콘 목록
+        // 210shop
+        shop:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><path fill="%23#{$color}" d="M24.996 8.683V6.695c0-.066-.027-.23-.07-.346-.071-.192.11.198-2.074-4.177A2.273 2.273 0 0 0 20.809.91H5.192c-.87 0-1.653.484-2.043 1.262L1.11 6.247a1.421 1.421 0 0 0-.105.448v1.988c0 1.087.472 2.059 1.213 2.744l-.001 10.84a2.825 2.825 0 0 0 2.822 2.823h15.923a2.825 2.825 0 0 0 2.822-2.823v-10.84a3.728 3.728 0 0 0 1.213-2.744zm-2 0c0 .965-.784 1.75-1.749 1.75s-1.749-.785-1.749-1.75v-.988h3.498v.988zm-5.498 0c0 .965-.784 1.75-1.749 1.75S14 9.647 14 8.682v-.988h3.498zm-5.498 0c0 .965-.784 1.75-1.749 1.75s-1.749-.785-1.749-1.75v-.988H12zm-5.498 0a1.75 1.75 0 0 1-3.498 0v-.988h3.498v.988zM4.938 3.068a.281.281 0 0 1 .254-.158H20.81c.106 0 .206.062.254.158l1.315 2.627H3.623zm5.582 20.018v-5.034h4.96v5.034zm11.263-.819c0 .454-.369.823-.822.823h-3.482v-5.038c0-1.104-.897-2-2-2h-4.96c-1.102 0-2 .896-2 2v5.038H5.04a.823.823 0 0 1-.823-.823v-9.889c.177.026.353.054.537.054 1.09 0 2.063-.474 2.749-1.22a3.708 3.708 0 0 0 5.498 0 3.708 3.708 0 0 0 5.498 0 3.727 3.727 0 0 0 2.75 1.22c.183 0 .359-.028.535-.054z"/></svg>',
+        // 210news
+        news:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%23#{$color}" d="M17 0H7C5.3 0 4 1.3 4 3v6H1c-.6 0-1 .4-1 1v7c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM2 11h2v6c0 .6-.4 1-1 1s-1-.4-1-1zm16 6c0 .6-.4 1-1 1H5.8c.1-.3.2-.7.2-1V3c0-.6.4-1 1-1h10c.6 0 1 .4 1 1z"/><path fill="%23#{$color}" d="M15 4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.5-1-1-1zM15 8H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.5-1-1-1zM15 12H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.5-1-1-1z"/> </svg>',
+        // 페이지 이동
+        document:
+        '<svg xmlns="http://www.w3.org/2000/svg" stroke="%23#{$color}" stroke-miterlimit="20" stroke-linejoin="round" stroke-width="3px" viewBox="0 0 224 218.68"><path fill="%23#{$color}" d="M48 218.68h128c26.47 0 48-18.39 48-41V41c0-22.61-21.53-41-48-41H48C21.53 0 0 18.39 0 41v136.67c0 22.61 21.53 41 48 41ZM16 41c0-15.08 14.36-27.33 32-27.33h128c17.64 0 32 12.26 32 27.33v136.67c0 15.08-14.36 27.33-32 27.33H48c-17.64 0-32-12.26-32-27.33V41Z"/><path fill="%23#{$color}" d="M64 80h96c10.49-.17 10.54-15.82 0-16H64c-10.49.17-10.54 15.82 0 16ZM64 120h96c10.49-.17 10.54-15.82 0-16H64c-10.49.17-10.54 15.82 0 16ZM64 160h96c10.49-.17 10.54-15.82 0-16H64c-10.49.17-10.54 15.82 0 16Z"/></svg>',
+        // 왼쪽 방향 화살표
+        arrow-left:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384.02"><path fill="%23#{$color}" d="m15.87 227.65 160 144.03c19.71 17.73 50.08 16.19 67.81-3.58 17.73-19.68 16.13-50.05-3.58-67.78L173.12 240H464c26.53 0 48-21.47 48-48s-21.47-48-48-48H173.06l67.07-60.32c19.71-17.76 21.31-48.1 3.58-67.78A48.049 48.049 0 0 0 208 0c-11.46 0-22.94 4.06-32.1 12.32l-160 143.97A48.02 48.02 0 0 0 0 191.97c0 13.6 5.77 26.57 15.87 35.68Z" /></svg>',
+        // 오른쪽 방향 화살표
+        arrow-right:
+        '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512"><path fill="%23#{$color}" d="m496.128 220.361-160-144.032c-19.712-17.728-50.08-16.192-67.808 3.584-17.728 19.68-16.128 50.048 3.584 67.776l66.976 60.32H48c-26.528 0-48 21.472-48 48s21.472 48 48 48h290.944l-67.072 60.32c-19.712 17.76-21.312 48.096-3.584 67.776A48.006 48.006 0 0 0 304 448.009c11.456 0 22.944-4.064 32.096-12.32l160-143.968A48.014 48.014 0 0 0 512 256.041a48.1 48.1 0 0 0-15.872-35.68z"/></svg>',
+        // 위쪽 방향 화살표 (탑버튼)
+        arrow-top:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.45 512"><path fill="%23#{$color}" d="M393.71 170.52c18.34 18.37 18.31 48.13-.06 66.47-18.35 18.32-48.06 18.32-66.41 0l-76.52-76.52V465c0 25.96-21.04 47-47 47s-47-21.04-47-47V160.47L80.2 236.99c-18.37 18.34-48.13 18.32-66.47-.05-18.32-18.35-18.32-48.07 0-66.42L170.49 13.77c18.35-18.35 48.11-18.35 66.47 0l156.75 156.75Z" /></svg>',
+        // 링크
+        link:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23#{$color}" d="M21 2h-6a1 1 0 0 0 0 2h3.586l-8.293 8.293a1 1 0 1 0 1.414 1.414L20 5.414V9a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1Z"/><path fill="%23#{$color}" d="M19 10.588a1 1 0 0 0-1 1v7.163A1.25 1.25 0 0 1 16.751 20H5.249A1.25 1.25 0 0 1 4 18.751V7.249A1.25 1.25 0 0 1 5.249 6h6.222a1 1 0 0 0 0-2H5.249A3.253 3.253 0 0 0 2 7.249v11.5A3.253 3.253 0 0 0 5.249 22h11.5A3.253 3.253 0 0 0 20 18.751v-7.163a1 1 0 0 0-1-1Z"/></svg>',
+        // 다운로드
+        download:
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.35 6.35"><path fill="%23#{$color}" d="M3.174.926a.265.265 0 0 0-.264.264v2.008l-.607-.608a.265.265 0 0 0-.188-.076.265.265 0 0 0-.185.076.265.265 0 0 0 0 .375l1.056 1.059a.265.265 0 0 0 .376 0v-.001L4.42 2.965a.265.265 0 0 0 0-.375.265.265 0 0 0-.375 0l-.605.606V1.19a.265.265 0 0 0-.266-.264zM1.322 4.895a.265.265 0 0 0-.263.263.265.265 0 0 0 .263.266h3.706a.265.265 0 0 0 .263-.266.265.265 0 0 0-.263-.263z"/></svg>'
+    );
+    $icon: _buildIcon(map-get($icons, $icon-name));
+    @return url("data:image/svg+xml;utf8,#{$icon}");
+}
+
+// icons
+.ic_link {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 1px;
+    &.point {
+        background-image: icon(link, "FB5A50");
+    }
+    &.white {
+        background-image: icon(link, "fff");
+    }
+    &.black {
+        background-image: icon(link, "1c1c1c");
+    }
+}
+.ic_download {
+    width: 2rem;
+    height: 2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.point {
+        background-image: icon(download, "FB5A50");
+    }
+}
+.ic_arrow_right {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.point {
+        background-image: icon(arrow-right, "FB5A50");
+    }
+    &.white {
+        background-image: icon(arrow-right, "fff");
+    }
+    &.black {
+        background-image: icon(arrow-right, "1c1c1c");
+    }
+}
+.ic_arrow_left {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.point {
+        background-image: icon(arrow-left, "FB5A50");
+    }
+    &.white {
+        background-image: icon(arrow-left, "fff");
+    }
+    &.black {
+        background-image: icon(arrow-left, "1c1c1c");
+    }
+}
+.ic_arrow_top {
+    width: 1.2rem;
+    height: 1.6rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.point {
+        background-image: icon(arrow-top, "FB5A50");
+    }
+    &.white {
+        background-image: icon(arrow-top, "fff");
+    }
+}
+.ic_shop {
+    width: 2rem;
+    height: 2.2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.black {
+        background-image: icon(shop, "1c1c1c");
+    }
+    &.point {
+        background-image: icon(shop, "FB5A50");
+    }
+    &.white {
+        background-image: icon(shop, "fff");
+    }
+}
+.ic_news {
+    width: 2rem;
+    height: 2.2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.black {
+        background-image: icon(news, "1c1c1c");
+    }
+    &.point {
+        background-image: icon(news, "FB5A50");
+    }
+    &.white {
+        background-image: icon(news, "fff");
+    }
+}
+.ic_document {
+    width: 2rem;
+    height: 2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    &.black {
+        background-image: icon(document, "1c1c1c");
+    }
+    &.point {
+        background-image: icon(document, "FB5A50");
+    }
+    &.white {
+        background-image: icon(document, "fff");
+    }
+}

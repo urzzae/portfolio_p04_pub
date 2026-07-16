@@ -1,0 +1,54 @@
+@use "../helpers" as *;
+
+// ** footer.scss
+
+#footer {
+  padding: 35px 0;
+  .wrap {
+    @include flex-flexbox;
+    @include flex-align(center);
+    @include flex-justify(between);
+    @include mq-tablet {
+      @include flex-direction(col);
+      @include flex-align(start);
+    }
+    .txtbox {
+      @include mq-tablet {
+        padding-bottom: 15px;
+      }
+      p {
+        font-size: 12px;
+        .line {
+          position: relative;
+          display: inline-block;
+          padding-left: 16px;
+          @include mq-tablet {
+            display: block;
+            padding-left: 0;
+          }
+          &::before {
+            @include mixin-absolute;
+            left: 8px;
+            top: 5px;
+            width: 1px;
+            height: 8px;
+            background: $colorMidGray;
+            @include mq-tablet {
+              display: none;
+            }
+          }
+        }
+        &:not(:first-child) {
+          padding-top: 5px;
+          text-align: justify;
+        }
+      }
+      .copy {
+        opacity: 0.45;
+      }
+    }
+  }
+  &.outline {
+    border-top: 1px solid $colorLineGray;
+  }
+}

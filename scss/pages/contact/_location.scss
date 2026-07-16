@@ -1,0 +1,102 @@
+@use "../../helpers" as *;
+
+// ** contact_location.scss
+// 오시는 길 약도 svg
+
+.contact_location {
+  @include flex-center;
+  border-top: 2px solid $colorDef;
+  padding-top: 65px;
+  @include mq-tablet {
+    @include flex-direction(col);
+  }
+  &_map {
+    width: 580px;
+    max-width: 90%;
+    // 210 위치 아이콘에 애니메이션 추가
+    #place {
+      cursor: pointer;
+      @include mixin-translate(80%, 50%);
+      .place_ic,
+      .place_logo {
+        fill: $colorDef;
+      }
+      .place_ic {
+        animation: fadeOut 1s infinite;
+        @include mixin-animation(fadeOut, 1s, infinite);
+      }
+      @keyframes fadeOut {
+        0% {
+          @include mixin-transform(translate3d(0px, -10px, 0));
+        }
+        50% {
+          @include mixin-transform(translate3d(0px, 0, 0));
+        }
+        100% {
+          @include mixin-transform(translate3d(0px, -10px, 0));
+        }
+      }
+    }
+    .map_line {
+      stroke: $colorLineGray;
+      fill: none;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-width: 2px;
+    }
+    .map_text {
+      font-size: $fsXsmall;
+      fill: $colorMidGray;
+      &.point {
+        font-family: $fontBold;
+        fill: #3eaa49;
+      }
+    }
+  }
+  &_info {
+    padding-left: 65px;
+    @include flex-flexbox;
+    @include flex-direction(col);
+    @include mq-tablet {
+      width: 100%;
+      padding-left: 0;
+      padding-top: 35px;
+    }
+    &_company {
+      padding-right: 5px;
+      @include mq-tablet {
+        .info_list {
+          .info_item {
+            svg {
+              width: 120px;
+            }
+          }
+        }
+      }
+      p {
+        color: $colorGray;
+        &.tell {
+          padding-bottom: 5px;
+        }
+        &.link {
+          @include flex-flexbox;
+          .button_ic {
+            margin-left: 5px;
+            .arrow_link {
+              fill: $colorGray;
+            }
+            &:hover {
+              .arrow_link {
+                fill: $colorPo01;
+              }
+            }
+          }
+        }
+      }
+      strong {
+        width: 100%;
+        color: $colorDef;
+      }
+    }
+  }
+}

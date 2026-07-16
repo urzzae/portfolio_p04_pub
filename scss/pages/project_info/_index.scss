@@ -1,0 +1,12 @@
+// index.scss
+@forward '_keyword';
+@forward '_effect';
+@forward '_process';
+
+.project_info {
+    .article_footer {
+        .buttons {
+            padding-top: 25px;
+        }
+    }
+}

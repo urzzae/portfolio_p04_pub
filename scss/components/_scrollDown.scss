@@ -1,0 +1,68 @@
+@use '../helpers' as *; 
+
+// ** scrollDown
+
+.scrolldown {
+    cursor: pointer;
+    position: absolute;
+    z-index: 998;
+    bottom: 60px;
+    left: 50%;
+    opacity: 0;
+    @include flex-flexbox;
+    @include flex-direction(col);
+    @include flex-align(center);
+    @include mixin-translate(-50%, 0);
+    @include mixin-animation(fade-in, .35s);
+    .mouse {
+        position: relative;
+        display: inline-block;
+        border: 2px solid $colorGray;
+        width: 30px;
+        height: 50px;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        &::before {
+            @include mixin-absolute;
+            top: 6px;
+            left: 10px;
+            width: 6px;
+            height: 6px;
+            background: $colorGray;  
+            border-radius: 100%;
+            box-shadow: 0px -5px 3px 1px $colorMidGray;
+            @include mixin-animation(scrolldown-wheel, 2s, infinite);
+        }
+    }
+    span {
+        margin-top: -3px;
+        position: relative;
+        border: solid $colorDef;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        @include mixin-rotate(45);
+        &:nth-child(even) {
+            @include mixin-animation(scrolldown-arrow-opacity, 500ms, infinite);
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+        }
+        &:nth-child(odd) {
+            @include mixin-animation(scrolldown-arrow-opacity, 500ms, infinite, 250ms);
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+        }
+    }
+    &.white {
+        .mouse {
+            border-color: #fff;
+            &::before {
+                background-color: #fff;
+            }
+        }
+        span {
+            border-color: #fff;
+        }
+    }
+}
